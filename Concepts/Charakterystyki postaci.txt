@@ -4,9 +4,11 @@ Bohater:
 - kot ma w ³apce ró¿d¿kê
 Sterowanie:
 - przy pomocy WSAD kot chodzi po planszy 
-- 
-
-
+- spacj¹ wykonuje siê akcjê: zamykanie okna, zwijanie scrolla
+- kursorem celowanie i strzelanie z ró¿d¿ki LPM i naprawa pentagramu PPM
+Obra¿enia:
+- kot ma 3 ¿ycia
+- po oberwaniu kot traci 1 ¿ycie i przez chwilê miga bêd¹c nieœmiertelnym
 
 
 Wrogowie:
