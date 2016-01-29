@@ -55,7 +55,7 @@ public class MusicManager : MonoBehaviour {
             }
         }
         catch {
-            Debug.Log("not found clip " + name);
+            Debug.Log("not found clip " + name + "  " + level.ToString());
         }
 
 
