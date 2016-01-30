@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject projectilePrefab;
 
+    [SerializeField]
+    Seal seal;
+
     GameObject currentProjectile;
 
     void Init()
@@ -48,7 +51,7 @@ public class PlayerController : MonoBehaviour
         direction.y = Input.GetAxis("Vertical");
 
         bool lc = Input.GetButtonDown("Fire1");
-        bool rc = Input.GetButtonDown("Fire2");
+        bool rc = Input.GetButton("Fire2");
         HandleMovement(direction);
         HandleMouse(lc, rc);
 
@@ -62,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
         if (rightClick)
         {
-
+            seal.PaintSealAtPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
     }
 
@@ -81,7 +84,15 @@ public class PlayerController : MonoBehaviour
 
         GameObject projectile = Instantiate(projectilePrefab);
         projectile.GetComponent<Projectile>().direction = direction;
-        projectile.GetComponent<Projectile>().transform.Rotate(new Vector3(direction.x, direction.y, 1));
+
+        // Get Angle in Radians
+        float AngleRad =
+            Mathf.Atan2(mousePosition.y - gameObject.transform.position.y, mousePosition.x - gameObject.transform.position.x);
+        // Get Angle in Degrees
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        // Rotate Object
+        projectile.GetComponent<Projectile>().transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+        
         projectile.transform.position = transform.position + new Vector3(projectileOffset * direction.x, projectileOffset * direction.y);
 
         return projectile;
