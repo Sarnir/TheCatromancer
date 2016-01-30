@@ -31,10 +31,7 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name != player.name)
-        {
-            Destroy();
-        }
+        Destroy();
     }
 
     void Destroy()

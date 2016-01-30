@@ -119,6 +119,10 @@ Prefab:
       propertyPath: Cat
       value: 
       objectReference: {fileID: 180046, guid: f456d00623c59d74298bf5d9b8ec0eff, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 86ee9b66585960742b9088e939b3e871, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184956}
