@@ -34,7 +34,12 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider) {
         Debug.Log("BatfuckerTrigger");
+        
+
         speed_vector = new Vector3(-speed_vector.x, -speed_vector.y, 0);
+        
+        print(speed_vector.normalized);
+
 
         
     }
