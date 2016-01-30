@@ -258,7 +258,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 444206, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11454590, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
       propertyPath: SpawnIntervalBase
@@ -331,6 +331,12 @@ Prefab:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 8c6eb29eb422c1043adcdf49b278cba3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &560283061 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11464292, guid: 8c6eb29eb422c1043adcdf49b278cba3,
+    type: 2}
+  m_PrefabInternal: {fileID: 560283060}
+  m_Script: {fileID: 11500000, guid: 2d15516d3ddff5c49aaf9fb7b819f6ca, type: 3}
 --- !u!1001 &684252577
 Prefab:
   m_ObjectHideFlags: 0
@@ -662,6 +668,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11425156, guid: f456d00623c59d74298bf5d9b8ec0eff, type: 2}
+      propertyPath: seal
+      value: 
+      objectReference: {fileID: 560283061}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f456d00623c59d74298bf5d9b8ec0eff, type: 2}
   m_IsPrefabParent: 0

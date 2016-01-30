@@ -1,22 +1,20 @@
 fileFormatVersion: 2
-guid: 2935465ab191882488bd3f4eb8e7b524
-timeCreated: 1454148410
+guid: 113f4422d8aee1d4fb26d00b227c4a5c
+timeCreated: 1454192208
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bat_1
-    21300002: bat_2
-    21300004: bat_3
-    21300006: scroll_1
-    21300008: scroll_2
-    21300010: scroll_3
-    21300012: tentacle_1
-    21300014: tentacle_0
-    21300016: tentacle_2
-    21300018: tentacle_3
-    21300020: candle_1
-    21300022: candle_2
-    21300024: candle_0
+    21300000: Items_0
+    21300002: Items_1
+    21300004: Items_2
+    21300006: Items_3
+    21300008: Items_4
+    21300010: Items_5
+    21300012: Items_6
+    21300014: Items_7
+    21300016: Items_8
+    21300018: Items_9
+    21300020: Items_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -40,7 +38,7 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 4096
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -63,229 +61,130 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: bat_1
+    - name: Items_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 598
-        width: 157
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -78.5, y: -18}
-        - {x: -78.5, y: -48}
-        - {x: 20.5, y: -48}
-        - {x: 78.5, y: 7}
-        - {x: 78.5, y: 48}
-        - {x: 11.5, y: 48}
-        - {x: -45.5, y: 33}
-    - name: bat_2
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 506
-        width: 90
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -42, y: 35}
-        - {x: -45, y: 27}
-        - {x: -45, y: -35}
-        - {x: 13, y: -35}
-        - {x: 45, y: -31}
-        - {x: 45, y: 12}
-        - {x: 37, y: 35}
-    - name: bat_3
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 374
-        width: 109
-        height: 86
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 14.5, y: 43}
-        - {x: -54.5, y: 2}
-        - {x: -54.5, y: -28}
-        - {x: -40.5, y: -43}
-        - {x: 53.5, y: -43}
-        - {x: 53.5, y: 43}
-      - - {x: 50.5, y: 25}
-        - {x: 50.5, y: 22}
-        - {x: 52.5, y: 20}
-        - {x: 54.5, y: 20}
-        - {x: 54.5, y: 27}
-        - {x: 52.5, y: 27}
-    - name: scroll_1
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 515
-        width: 173
+        x: 14
+        y: 544
+        width: 172
         height: 142
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -81.5, y: 71}
-        - {x: -86.5, y: 44}
-        - {x: -86.5, y: -71}
-        - {x: 66.5, y: -71}
-        - {x: 86.5, y: -69}
-        - {x: 86.5, y: 55}
-        - {x: 69.5, y: 71}
-    - name: scroll_2
+      - - {x: -45, y: 71}
+        - {x: -86, y: 35}
+        - {x: -86, y: -50}
+        - {x: -82, y: -71}
+        - {x: 46, y: -71}
+        - {x: 86, y: -56}
+        - {x: 86, y: 43}
+        - {x: 44, y: 71}
+    - name: Items_1
       rect:
         serializedVersion: 2
-        x: 549
-        y: 423
-        width: 188
+        x: 239
+        y: 452
+        width: 187
         height: 227
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 75, y: 72.5}
-        - {x: 4, y: 113.5}
-        - {x: -36, y: 113.5}
-        - {x: -57, y: 100.5}
-        - {x: -94, y: 76.5}
-        - {x: -94, y: -69.5}
-        - {x: -93, y: -79.5}
-        - {x: -47, y: -113.5}
-        - {x: 12, y: -113.5}
-        - {x: 92, y: -90.5}
-        - {x: 94, y: -81.5}
-        - {x: 94, y: -40.5}
-        - {x: 62, y: -23.5}
-    - name: scroll_3
+      - - {x: 81.5, y: 76.5}
+        - {x: 12.5, y: 113.5}
+        - {x: -39.5, y: 113.5}
+        - {x: -93.5, y: 79.5}
+        - {x: -93.5, y: -79.5}
+        - {x: -40.5, y: -113.5}
+        - {x: 5.5, y: -113.5}
+        - {x: 44.5, y: -105.5}
+        - {x: 93.5, y: -79.5}
+        - {x: 93.5, y: -33.5}
+        - {x: 71.5, y: -16.5}
+    - name: Items_2
       rect:
         serializedVersion: 2
-        x: 806
-        y: 183
-        width: 320
+        x: 496
+        y: 212
+        width: 319
         height: 515
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 146, y: -22.5}
-        - {x: 157, y: 94.5}
-        - {x: 155, y: 115.5}
-        - {x: 110, y: 123.5}
-        - {x: 2, y: 108.5}
-        - {x: 42, y: 222.5}
-        - {x: -45, y: 232.5}
-        - {x: -55, y: 257.5}
-        - {x: -95, y: 257.5}
-        - {x: -158, y: 209.5}
-        - {x: -144, y: 80.5}
-        - {x: -160, y: -19.5}
-        - {x: -160, y: -107.5}
-        - {x: -135, y: -103.5}
-        - {x: -75, y: -64.5}
-        - {x: -1, y: -151.5}
-        - {x: -15, y: -247.5}
-        - {x: 18, y: -230.5}
-        - {x: 44, y: -173.5}
-        - {x: 42, y: -127.5}
-        - {x: 48, y: -149.5}
-        - {x: 69, y: -182.5}
-        - {x: 99, y: -197.5}
-        - {x: 78, y: -234.5}
-        - {x: 77, y: -246.5}
-        - {x: 90, y: -257.5}
-        - {x: 145, y: -257.5}
-        - {x: 160, y: -226.5}
-        - {x: 160, y: -165.5}
-        - {x: 111, y: -132.5}
-    - name: tentacle_1
+      - - {x: 146.5, y: -22.5}
+        - {x: 144.5, y: 28.5}
+        - {x: 155.5, y: 73.5}
+        - {x: 157.5, y: 94.5}
+        - {x: 155.5, y: 115.5}
+        - {x: 110.5, y: 123.5}
+        - {x: 42.5, y: 73.5}
+        - {x: 40.5, y: 225.5}
+        - {x: -2.5, y: 257.5}
+        - {x: -108.5, y: 257.5}
+        - {x: -157.5, y: 209.5}
+        - {x: -143.5, y: 81.5}
+        - {x: -159.5, y: -45.5}
+        - {x: -159.5, y: -94.5}
+        - {x: -157.5, y: -99.5}
+        - {x: -134.5, y: -102.5}
+        - {x: -73.5, y: -65.5}
+        - {x: 3.5, y: -151.5}
+        - {x: -11.5, y: -224.5}
+        - {x: -8.5, y: -237.5}
+        - {x: -3.5, y: -239.5}
+        - {x: 18.5, y: -230.5}
+        - {x: 45.5, y: -173.5}
+        - {x: 42.5, y: -127.5}
+        - {x: 48.5, y: -168.5}
+        - {x: 77.5, y: -246.5}
+        - {x: 91.5, y: -257.5}
+        - {x: 122.5, y: -257.5}
+        - {x: 159.5, y: -225.5}
+        - {x: 159.5, y: -185.5}
+        - {x: 111.5, y: -132.5}
+    - name: Items_3
       rect:
         serializedVersion: 2
-        x: 1272
-        y: 442
-        width: 192
+        x: 962
+        y: 471
+        width: 191
         height: 243
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -16, y: 121.5}
-        - {x: -96, y: -57.5}
-        - {x: -96, y: -92.5}
-        - {x: -42, y: -117.5}
-        - {x: -31, y: -121.5}
-        - {x: 96, y: -121.5}
-        - {x: 96, y: 100.5}
-        - {x: 72, y: 121.5}
-    - name: tentacle_0
+      - - {x: 0.5, y: 121.5}
+        - {x: -2.5, y: 107.5}
+        - {x: -95.5, y: -64.5}
+        - {x: -95.5, y: -84.5}
+        - {x: -84.5, y: -103.5}
+        - {x: -16.5, y: -121.5}
+        - {x: 95.5, y: -121.5}
+        - {x: 95.5, y: 117.5}
+        - {x: 79.5, y: 121.5}
+    - name: Items_4
       rect:
         serializedVersion: 2
-        x: 1691
-        y: 165
-        width: 297
-        height: 68
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -110.5, y: 33}
-        - {x: -148.5, y: 20}
-        - {x: -148.5, y: -34}
-        - {x: 135.5, y: -34}
-        - {x: 144.5, y: -25}
-        - {x: 144.5, y: 22}
-        - {x: 126.5, y: 33}
-    - name: tentacle_2
-      rect:
-        serializedVersion: 2
-        x: 1359
-        y: 100
-        width: 253
-        height: 208
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12.5, y: 104}
-        - {x: -126.5, y: 104}
-        - {x: -126.5, y: 21}
-        - {x: -77.5, y: 0}
-        - {x: -53.5, y: 5}
-        - {x: -59.5, y: 25}
-        - {x: -19.5, y: 28}
-        - {x: -61.5, y: -70}
-        - {x: 40.5, y: -104}
-        - {x: 61.5, y: -104}
-        - {x: 126.5, y: -47}
-        - {x: 126.5, y: -17}
-        - {x: 83.5, y: 84}
-    - name: tentacle_3
-      rect:
-        serializedVersion: 2
-        x: 1604
-        y: 404
+        x: 1294
+        y: 433
         width: 203
         height: 246
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 65.5, y: 123}
-        - {x: -100.5, y: 123}
-        - {x: -101.5, y: 120}
-        - {x: -101.5, y: -83}
-        - {x: -87.5, y: -123}
-        - {x: 85.5, y: -123}
-        - {x: 94.5, y: -116}
-        - {x: 94.5, y: 74}
-        - {x: 81.5, y: 121}
+      - - {x: 8.5, y: 123}
+        - {x: -74.5, y: 123}
+        - {x: -76.5, y: 122}
+        - {x: -101.5, y: 116}
+        - {x: -101.5, y: -92}
+        - {x: -90.5, y: -123}
+        - {x: 75.5, y: -123}
+        - {x: 94.5, y: -112}
+        - {x: 94.5, y: 19}
+        - {x: 62.5, y: 101}
       - - {x: 96.5, y: -96}
         - {x: 96.5, y: -99}
         - {x: 97.5, y: -101}
@@ -293,64 +192,118 @@ TextureImporter:
         - {x: 101.5, y: -100}
         - {x: 101.5, y: -95}
         - {x: 98.5, y: -95}
-    - name: candle_1
-      rect:
-        serializedVersion: 2
-        x: 185
-        y: 100
-        width: 62
-        height: 152
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9, y: 76}
-        - {x: -6, y: 76}
-        - {x: -21, y: 45}
-        - {x: -31, y: -44}
-        - {x: -31, y: -74}
-        - {x: -29, y: -76}
-        - {x: 22, y: -76}
-        - {x: 29, y: -75}
-        - {x: 31, y: -68}
-        - {x: 31, y: -44}
-        - {x: 19, y: 24}
-    - name: candle_2
+    - name: Items_5
       rect:
         serializedVersion: 2
         x: 50
         y: 113
-        width: 58
+        width: 57
         height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -21, y: 51.5}
-        - {x: -29, y: 12.5}
-        - {x: -29, y: -51.5}
-        - {x: 21, y: -51.5}
-        - {x: 29, y: -50.5}
-        - {x: 29, y: 0.5}
-        - {x: 20, y: 32.5}
-        - {x: -2, y: 51.5}
-    - name: candle_0
+      - - {x: 17.5, y: 35.5}
+        - {x: -1.5, y: 51.5}
+        - {x: -16.5, y: 51.5}
+        - {x: -26.5, y: 12.5}
+        - {x: -28.5, y: 0.5}
+        - {x: -28.5, y: -51.5}
+        - {x: 28.5, y: -51.5}
+        - {x: 28.5, y: -27.5}
+        - {x: 27.5, y: -25.5}
+    - name: Items_6
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 100
+        width: 63
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 76}
+        - {x: -31.5, y: 23}
+        - {x: -31.5, y: -76}
+        - {x: 31.5, y: -76}
+        - {x: 31.5, y: -18}
+        - {x: 18.5, y: 76}
+    - name: Items_7
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 129
+        width: 252
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -107, y: 104}
+        - {x: -126, y: 89}
+        - {x: -126, y: 29}
+        - {x: -101, y: 13}
+        - {x: -58, y: 0}
+        - {x: -52, y: 5}
+        - {x: -49, y: -54}
+        - {x: -48, y: -63}
+        - {x: -42, y: -70}
+        - {x: 8, y: -104}
+        - {x: 93, y: -104}
+        - {x: 126, y: -58}
+        - {x: 126, y: -9}
+        - {x: -16, y: 104}
+    - name: Items_8
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 191
+        width: 296
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -83, y: 34}
+        - {x: -148, y: 28}
+        - {x: -148, y: -34}
+        - {x: 136, y: -34}
+        - {x: 148, y: -20}
+        - {x: 148, y: 29}
+        - {x: 144, y: 34}
+    - name: Items_9
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 152
+        width: 9
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Items_10
       rect:
         serializedVersion: 2
         x: 117
         y: 100
-        width: 56
-        height: 87
+        width: 57
+        height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -14, y: 43.5}
-        - {x: -28, y: -13.5}
-        - {x: -28, y: -43.5}
-        - {x: 28, y: -43.5}
-        - {x: 28, y: -3.5}
-        - {x: 6, y: 43.5}
+      - - {x: 7.5, y: 25}
+        - {x: -22.5, y: 25}
+        - {x: -28.5, y: 1}
+        - {x: -28.5, y: -21}
+        - {x: -22.5, y: -22}
+        - {x: -12.5, y: -25}
+        - {x: 17.5, y: -25}
+        - {x: 28.5, y: -21}
+        - {x: 28.5, y: -2}
+        - {x: 16.5, y: 21}
     outline: []
   spritePackingTag: 
   userData: 
