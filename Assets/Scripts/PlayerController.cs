@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject projectilePrefab;
 
+    [SerializeField]
+    Seal seal;
+
     GameObject currentProjectile;
 
     void Init()
@@ -48,7 +51,7 @@ public class PlayerController : MonoBehaviour
         direction.y = Input.GetAxis("Vertical");
 
         bool lc = Input.GetButtonDown("Fire1");
-        bool rc = Input.GetButtonDown("Fire2");
+        bool rc = Input.GetButton("Fire2");
         HandleMovement(direction);
         HandleMouse(lc, rc);
 
@@ -62,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
         if (rightClick)
         {
-
+            seal.PaintSealAtPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
     }
 
