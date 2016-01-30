@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728fd50ff9411fd499fb02e45ae4396a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ContinueSign: {fileID: 1222762321}
+  SceneNr: 0
 --- !u!4 &199696088
 Transform:
   m_ObjectHideFlags: 0

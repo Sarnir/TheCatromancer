@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Sprite))]
 public class PlayerController : MonoBehaviour
@@ -10,7 +9,6 @@ public class PlayerController : MonoBehaviour
 
     private const int EnemyLAYER = 9;
     private const int ProjectileEnemyLAYER = 11;
-
 
     public Color defaultColor;
 
@@ -44,7 +42,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Vector3 originalScale;
 
-    void Start() {
+    void Start()
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
         polygonCollider = GetComponent<PolygonCollider2D>();
         animator = GetComponent<Animator>();
@@ -55,6 +54,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (LifesCount == 0)
+        {
+            SceneManager.LoadScene("gameover");
+        }
+
         direction.x = Input.GetAxis("Horizontal");
         direction.y = Input.GetAxis("Vertical");
 
@@ -62,13 +66,13 @@ public class PlayerController : MonoBehaviour
         bool rc = Input.GetButton("Fire2");
         HandleMovement(direction);
         HandleMouse(lc, rc);
-
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         int collision_layer = collider.gameObject.layer;
-        if (collision_layer == ProjectileEnemyLAYER || collision_layer == EnemyLAYER) {
+        if (collision_layer == ProjectileEnemyLAYER || collision_layer == EnemyLAYER)
+        {
             HandleHit();
         }
     }
@@ -115,54 +119,57 @@ public class PlayerController : MonoBehaviour
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
         // Rotate Object
         projectile.GetComponent<Projectile>().transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
-        
+
         projectile.transform.position = transform.position + new Vector3(projectileOffset * direction.x, projectileOffset * direction.y);
 
         return projectile;
     }
 
-
-    void SetMortal() {
+    void SetMortal()
+    {
         isImmortal = false;
     }
 
-    void SetImmortal() {
+    void SetImmortal()
+    {
         isImmortal = true;
         Invoke("SetMortal", ImmortalTime);
         polygonCollider.enabled = false;
     }
 
-
-
-    void HandleHit() {
-        if (!isImmortal) {
+    void HandleHit()
+    {
+        if (!isImmortal)
+        {
             SetImmortal();
             StartBlinkSprite();
             LifesCount--;
         }
     }
 
-    void StartBlinkSprite() {
-        InvokeRepeating("SetSpriteHi",0, blinkFrequency);
+    void StartBlinkSprite()
+    {
+        InvokeRepeating("SetSpriteHi", 0, blinkFrequency);
         //WaitForSeconds(0.25f);
-        InvokeRepeating("SetSpriteLow",blinkFrequency/2, blinkFrequency);
+        InvokeRepeating("SetSpriteLow", blinkFrequency / 2, blinkFrequency);
         Invoke("StopBlinkSprie", ImmortalTime);
-
     }
 
-    void StopBlinkSprie() {
+    void StopBlinkSprie()
+    {
         CancelInvoke("SetSpriteHi");
         CancelInvoke("SetSpriteLow");
         polygonCollider.enabled = true;
         spriteRenderer.color = defaultColor;
     }
 
-    void SetSpriteHi() {
+    void SetSpriteHi()
+    {
         spriteRenderer.color = glowColor;
     }
 
-    void SetSpriteLow() {
+    void SetSpriteLow()
+    {
         spriteRenderer.color = blinkColor;
-
     }
 }

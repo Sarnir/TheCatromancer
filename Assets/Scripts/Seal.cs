@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Seal : MonoBehaviour
 {
@@ -36,6 +37,21 @@ public class Seal : MonoBehaviour
 
         var collider = gameObject.AddComponent<PolygonCollider2D>();
         collider.isTrigger = true;
+    }
+
+    void Update()
+    {
+        if (sealCompletion >= 98f)
+        {
+            if (PlayerPrefs.GetInt("CurrentLevel") == 5)
+            {
+                // trigger cat god appearance
+            }
+            else
+            {
+                SceneManager.LoadScene("success");
+            }
+        }
     }
 
     public float GetCompletion()
