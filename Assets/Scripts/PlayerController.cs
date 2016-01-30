@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     Sprite sprite;
     SpriteRenderer spriteRenderer;
     Vector2 direction;
+    PolygonCollider2D polygonCollider;
 
     public float Y_sprite_padding = 5;
     public float X_sprite_padding = 5;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        polygonCollider = GetComponent<PolygonCollider2D>();
         //StartBlinkSprite();
 
         //
@@ -141,6 +143,7 @@ public class PlayerController : MonoBehaviour
     void SetImmortal() {
         isImmortal = true;
         Invoke("SetMortal", ImmortalTime);
+        polygonCollider.enabled = false;
     }
 
 
@@ -164,6 +167,7 @@ public class PlayerController : MonoBehaviour
     void StopBlinkSprie() {
         CancelInvoke("SetSpriteHi");
         CancelInvoke("SetSpriteLow");
+        polygonCollider.enabled = true;
         spriteRenderer.color = defaultColor;
     }
 
