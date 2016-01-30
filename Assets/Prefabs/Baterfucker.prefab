@@ -151,7 +151,7 @@ MonoBehaviour:
   SinusFreqRatio: 2
   Y_sprite_padding: 0.2
   X_sprite_padding: 0.5
-  Cat: {fileID: 0}
+  Cat: {fileID: 180046, guid: f456d00623c59d74298bf5d9b8ec0eff, type: 2}
 --- !u!212 &21239814
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -188,7 +188,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Cat
+      value: 
+      objectReference: {fileID: 180046, guid: f456d00623c59d74298bf5d9b8ec0eff, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184956}

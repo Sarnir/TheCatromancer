@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11485126}
   - 60: {fileID: 6093912}
   - 50: {fileID: 5089936}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 733765713
+  m_SortingLayerID: -2109127553
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 18993e013b6ffc547a205a940df0a2a7, type: 3}
   m_Color: {r: 0, g: 1, b: 0.048275948, a: 1}
@@ -133,7 +133,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
-      value: 733765713
+      value: -2109127553
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
@@ -148,6 +148,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 18993e013b6ffc547a205a940df0a2a7,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118964}
