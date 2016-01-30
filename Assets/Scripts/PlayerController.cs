@@ -62,8 +62,15 @@ public class PlayerController : MonoBehaviour
 
         GameObject projectile = Instantiate(projectilePrefab);
         projectile.GetComponent<Projectile>().direction = direction;
-        projectile.GetComponent<Projectile>().transform.localEulerAngles = direction;
-        projectile.GetComponent<Projectile>().transform.eulerAngles = direction;
+
+        // Get Angle in Radians
+        float AngleRad =
+            Mathf.Atan2(mousePosition.y - gameObject.transform.position.y, mousePosition.x - gameObject.transform.position.x);
+        // Get Angle in Degrees
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        // Rotate Object
+        projectile.GetComponent<Projectile>().transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+        
         projectile.transform.position = transform.position + new Vector3(projectileOffset * direction.x, projectileOffset * direction.y);
 
         return projectile;
