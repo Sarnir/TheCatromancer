@@ -28,6 +28,7 @@ public class SpawnerController : MonoBehaviour
                 SpawnMonster(gameObject.transform.position);
                 LastTimeSpawned = DateTime.Now;
             }
+
             if (PlayerTriggeredClosing)
             {
                 Active = false;
@@ -38,9 +39,7 @@ public class SpawnerController : MonoBehaviour
     GameObject SpawnMonster(Vector2 spawnerPosition)
     {
         GameObject monster = Instantiate(Monster);
-        
         monster.transform.position = transform.position + new Vector3(spawnerPosition.x, spawnerPosition.y);
-
         return monster;
     }
 }
