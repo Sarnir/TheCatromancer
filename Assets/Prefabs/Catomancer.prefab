@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11497768}
   - 60: {fileID: 6068486}
   m_Layer: 0
-  m_Name: Catromancer
+  m_Name: Catomancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0.2
-  projectile: {fileID: 0}
+  projectileOffset: 0
+  projectilePrefab: {fileID: 0}
 --- !u!212 &21210548
 SpriteRenderer:
   m_ObjectHideFlags: 1
