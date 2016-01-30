@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490906}
-  - 212: {fileID: 21269752}
+  - 212: {fileID: 21223258}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -16,6 +16,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &149126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 462018}
+  - 60: {fileID: 6045008}
+  m_Layer: 0
+  m_Name: Walls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &462018
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 490906}
+  m_RootOrder: 0
 --- !u!4 &490906
 Transform:
   m_ObjectHideFlags: 1
@@ -25,10 +53,35 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 462018}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!212 &21269752
+--- !u!60 &6045008
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149126}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 9.826291, y: 5.7185507}
+      - {x: 9.829424, y: -8.983188}
+      - {x: -11.351877, y: -8.996547}
+      - {x: -11.223437, y: 5.87888}
+      - {x: 9.921466, y: 5.884346}
+      - {x: 13.489218, y: 9.389986}
+      - {x: -13.85, y: 9.266667}
+      - {x: -13.85, y: -9.266667}
+      - {x: 13.85, y: -9.266667}
+      - {x: 13.85, y: 9.266667}
+--- !u!212 &21223258
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,7 +105,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 733765713
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 06a9d9b0425349a4f82efbd8a583385c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
