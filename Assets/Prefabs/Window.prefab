@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &113796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 422616}
+  - 61: {fileID: 6140964}
+  - 114: {fileID: 11420202}
+  m_Layer: 0
+  m_Name: WindowsCommander
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &143544
 GameObject:
   m_ObjectHideFlags: 0
@@ -17,6 +34,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &422616
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444206}
+  m_RootOrder: 0
 --- !u!4 &444206
 Transform:
   m_ObjectHideFlags: 1
@@ -24,11 +53,41 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.77, y: 0.83, z: 0}
+  m_LocalPosition: {x: 13.5, y: 0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 422616}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6140964
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113796}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -1.4578438, y: -1.2705684}
+  serializedVersion: 2
+  m_Size: {x: 1.8443327, y: 5.486947}
+--- !u!114 &11420202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efb663e6d7291f48b7db54f01c7b9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInBounds: 0
+  WindowOpen: {fileID: 21300002, guid: f5b19b6b1c045ac4084e73aa76267de9, type: 3}
+  WindowClose: {fileID: 21300000, guid: f5b19b6b1c045ac4084e73aa76267de9, type: 3}
+  AutoOpenTime: 5
 --- !u!114 &11454590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -44,6 +103,7 @@ MonoBehaviour:
   TimeToActivate: 0
   Active: 0
   PlayerTriggeredClosing: 0
+  SpawnIntervalBase: 4
 --- !u!212 &21248240
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -68,7 +128,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 733765713
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f5b19b6b1c045ac4084e73aa76267de9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
