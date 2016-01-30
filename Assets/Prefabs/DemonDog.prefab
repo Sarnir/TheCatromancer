@@ -81,6 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 180046, guid: f456d00623c59d74298bf5d9b8ec0eff, type: 2}
   Portal: {fileID: 142076, guid: 3118fc9419c79384e98fc89369bae983, type: 2}
+  hitsToKill: 2
+  explosionPrefab: {fileID: 100000, guid: bf3f387d006f0414b80b25ba2b9cdf38, type: 2}
   projectilePrefab: {fileID: 184786, guid: 08eb5e8a479d26f4a96d2edb0d87700c, type: 2}
   projectileOffset: 2
   shotIntervalBase: 2
@@ -149,6 +151,10 @@ Prefab:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 100000, guid: bf3f387d006f0414b80b25ba2b9cdf38, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 199424}

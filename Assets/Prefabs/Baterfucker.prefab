@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a461938f8110b16409e509f10c4d49a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 100004, guid: 9b26e1efdb8fd4d53b35c3c6b7f50cf5, type: 2}
+  explosionPrefab: {fileID: 100000, guid: e6ab56e4714ff4154ac034cf28db78b2, type: 2}
   Speed: 6.55
   Damage: 10
   Y_sprite_padding: 0.2
@@ -203,6 +203,10 @@ Prefab:
       propertyPath: SinusAmpRatio
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 100000, guid: e6ab56e4714ff4154ac034cf28db78b2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184956}

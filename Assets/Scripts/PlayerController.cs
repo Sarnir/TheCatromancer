@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public bool isImmortal = false;
     public int LifesCount = 5;
 
+    private const int EnemyLAYER = 9;
+    private const int ProjectileEnemyLAYER = 11;
+
 
     public Color defaultColor;
 
@@ -20,8 +23,8 @@ public class PlayerController : MonoBehaviour
     Vector2 direction;
     PolygonCollider2D polygonCollider;
 
-    public float Y_sprite_padding = 5;
-    public float X_sprite_padding = 5;
+    private float Y_sprite_padding = 1;
+    private float X_sprite_padding = 1;
 
     private float x_max, x_min, y_max, y_min;
 
@@ -74,8 +77,10 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("CatCollision " + collision.collider);
-
+        int collision_layer = collision.collider.gameObject.layer;
+        if (collision_layer == ProjectileEnemyLAYER || collision_layer == EnemyLAYER) {
             HandleHit();
+        }
         
 
         
@@ -85,9 +90,10 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) {
         Debug.Log("CatTrigger " + collider.name );
-
+        int collision_layer = collider.gameObject.layer;
+        if (collision_layer == ProjectileEnemyLAYER || collision_layer == EnemyLAYER) {
             HandleHit();
-   
+        }
 
 
     }
