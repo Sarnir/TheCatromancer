@@ -4,8 +4,19 @@ using System;
 
 [RequireComponent(typeof(Sprite))]
 public class PlayerController : MonoBehaviour
-{    
+{
+    public bool isImmortal = false;
+    public int LifesCount = 5;
+
+
+    public Color defaultColor;
+
+    public float ImmortalTime = 1f;
+    public float blinkFrequency = 0.1f;
+    public Color blinkColor;
+    public Color glowColor;
     Sprite sprite;
+    SpriteRenderer spriteRenderer;
     Vector2 direction;
 
     [SerializeField]
@@ -22,6 +33,13 @@ public class PlayerController : MonoBehaviour
     void Init()
     {
         sprite = GetComponent<Sprite>();
+        
+        
+    }
+
+    void Start() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        StartBlinkSprite();
     }
 
     void Update()
@@ -33,6 +51,7 @@ public class PlayerController : MonoBehaviour
         bool rc = Input.GetButtonDown("Fire2");
         HandleMovement(direction);
         HandleMouse(lc, rc);
+
     }
 
     private void HandleMouse(bool leftClick, bool rightClick)
@@ -66,5 +85,45 @@ public class PlayerController : MonoBehaviour
         projectile.transform.position = transform.position + new Vector3(projectileOffset * direction.x, projectileOffset * direction.y);
 
         return projectile;
+    }
+
+    void HitPlayer(int power = 1) {
+        LifesCount--;
+
+    }
+
+    void SetMortal() {
+        isImmortal = false;
+    }
+
+    void SetImmortalMortal() {
+        isImmortal = false;
+    }
+
+    public void SetImmortalForTime(float time = 2) {
+ 
+    }
+
+    void StartBlinkSprite() {
+        InvokeRepeating("SetSpriteHi",0, blinkFrequency);
+        //WaitForSeconds(0.25f);
+        InvokeRepeating("SetSpriteLow",blinkFrequency/2, blinkFrequency);
+        Invoke("StopBlinkSprie", ImmortalTime);
+
+    }
+
+    void StopBlinkSprie() {
+        CancelInvoke("SetSpriteHi");
+        CancelInvoke("SetSpriteLow");
+        spriteRenderer.color = defaultColor;
+    }
+
+    void SetSpriteHi() {
+        spriteRenderer.color = glowColor;
+    }
+
+    void SetSpriteLow() {
+        spriteRenderer.color = blinkColor;
+
     }
 }
