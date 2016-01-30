@@ -6,8 +6,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
     public float Speed = 10f;
     public int Damage = 10;
-    public float SinusAmpRatio = 2.0f;
-    public float SinusFreqRatio = 2.0f;
+    private float SinusAmpRatio = 0.1f;
+    private float SinusFreqRatio = 2f;
     public float Y_sprite_padding = 5;
     public float X_sprite_padding = 5;
 
@@ -22,6 +22,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
     void Start () {
 
         Cat = GameObject.FindObjectOfType<PlayerController>();
+        SinusAmpRatio = Random.RandomRange(0, 0.25f);
+        SinusFreqRatio = Random.RandomRange(0, 2f);
 
         float distance = transform.position.z - Camera.main.transform.position.z;
         Vector3 leftMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 0, distance));
@@ -76,8 +78,21 @@ public class BatterfuckerBehaviour : MonoBehaviour {
     }
 
     void SpontaniusDirectionChange () {
-        speed_vector = Cat.transform.position - transform.position;
-        speed_vector = speed_vector * Random.RandomRange(1,2);
+        //speed_vector = Cat.transform.position - transform.position;
+        float rand_x = Random.RandomRange(-Speed, Speed);
+        float rand_y;
+        if (Random.Range(0,1) < 0.5f) {
+            rand_y = Speed + rand_x;
+
+        }
+        else {
+            rand_y = -Speed + rand_x;
+        }
+        rand_y = Mathf.Clamp(rand_y, -Speed, Speed);
+        speed_vector = new Vector3(rand_x, rand_y, 0);
+
+
+
 
 
 

@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 6.55
   Damage: 10
-  SinusAmpRatio: 0.1
+  SinusAmpRatio: 0.2
   SinusFreqRatio: 2
   Y_sprite_padding: 0.2
   X_sprite_padding: 0.5
@@ -199,6 +199,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SinusAmpRatio
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
