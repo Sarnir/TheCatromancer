@@ -23,11 +23,6 @@ public class PlayerController : MonoBehaviour
     Vector2 direction;
     PolygonCollider2D polygonCollider;
 
-    private float Y_sprite_padding = 1;
-    private float X_sprite_padding = 1;
-
-    private float x_max, x_min, y_max, y_min;
-
     [SerializeField]
     float movementSpeed;
 
