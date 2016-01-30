@@ -28,7 +28,7 @@ public class LifeKeeper : MonoBehaviour {
         //Generet heart icon
         foreach (Transform child in transform) {
             count++;
-            print(child.name);
+            //print(child.name);
             if (count <= lifes) {
                 child.GetComponent<SpriteRenderer>().enabled = true;
 

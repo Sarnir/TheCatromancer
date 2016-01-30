@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 490906}
   - 212: {fileID: 21223258}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 462018}
   - 60: {fileID: 6045008}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 9.826291, y: 5.7185507}
-      - {x: 9.829424, y: -8.983188}
-      - {x: -11.351877, y: -8.996547}
+      - {x: 9.89432, y: -7.1012244}
+      - {x: -11.286982, y: -7.244374}
       - {x: -11.223437, y: 5.87888}
       - {x: 9.921466, y: 5.884346}
       - {x: 13.489218, y: 9.389986}
@@ -117,7 +117,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125708}
