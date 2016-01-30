@@ -28,6 +28,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
         SinusAmpRatio = Random.RandomRange(0, 0.25f);
         SinusFreqRatio = Random.RandomRange(0, 2f);
 
+        transform.localScale = new Vector3(transform.localScale.x * Random.value > 0.5f ? 1 : -1, transform.localScale.y, transform.localScale.z);
+
         float distance = transform.position.z - Camera.main.transform.position.z;
         Vector3 leftMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 0, distance));
         Vector3 rightMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0, distance));
