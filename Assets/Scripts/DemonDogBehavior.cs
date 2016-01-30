@@ -7,6 +7,7 @@ public class DemonDogBehavior : MonoBehaviour
 {
     Transform playerTransform;
     public GameObject Portal;
+    public Vector3 SpawnShift;
     private float x_max, x_min, y_max, y_min;
 
     public int hitsToKill = 2;
@@ -29,7 +30,7 @@ public class DemonDogBehavior : MonoBehaviour
     void Start ()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        gameObject.transform.position = Portal.gameObject.transform.position;
+        gameObject.transform.position = Portal.gameObject.transform.position + SpawnShift;
         ShotInterval = DateTime.Now;
     }
 

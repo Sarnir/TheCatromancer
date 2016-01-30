@@ -9,37 +9,36 @@ public class SpawnerController : MonoBehaviour
     public bool TimeToActivate;
     public bool Active;
     public bool PlayerTriggeredClosing;
-    public int SpawnIntervalBase;
+    public float SpawnIntervalBase;
+    public Vector3 SpawnPositionShift = new Vector3(0, -1);
+    private float timeFromLastSpawn;
 
     private DateTime LastTimeSpawned;
+
+    void Start() {
+        timeFromLastSpawn = 0;
+    }
 	
 	void Update ()
     {
-        if (TimeToActivate)
+        if (Active)
         {
-            // pokaż portal
-            Active = true;
+            timeFromLastSpawn += Time.deltaTime;
+
         }
 
-	    if (Active)
+	    if (timeFromLastSpawn > SpawnIntervalBase )
         {
-            if (DateTime.Now - LastTimeSpawned > TimeSpan.FromSeconds(SpawnIntervalBase + (UnityRandom.value * 2)))
-            {
-                SpawnMonster(gameObject.transform.position);
-                LastTimeSpawned = DateTime.Now;
-            }
-
-            if (PlayerTriggeredClosing)
-            {
-                Active = false;
-            }
+            SpawnMonster(gameObject.transform.position);
+            timeFromLastSpawn = 0;
         }
     }
 
     GameObject SpawnMonster(Vector2 spawnerPosition)
     {
-        GameObject monster = Instantiate(Monster);
-        monster.transform.position = transform.position + new Vector3(spawnerPosition.x, spawnerPosition.y);
+        Vector3 pos = transform.position + SpawnPositionShift;
+        GameObject monster = Instantiate(Monster, transform.position, Quaternion.identity) as GameObject;
+        //monster.transform.position = transform.position + new Vector3(SpawnPositionShift.x, SpawnPositionShift.y);
         return monster;
     }
 }
