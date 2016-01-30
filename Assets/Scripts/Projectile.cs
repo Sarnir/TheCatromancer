@@ -7,22 +7,23 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     float speed = 1f;
 
-    SpriteRenderer renderer;
+    SpriteRenderer spriteRenderer;
     bool seen;
 
     public Vector2 direction { get; set; }
+    public GameObject player { get; set; }
 
     void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        if (renderer.isVisible)
+        if (spriteRenderer.isVisible)
             seen = true;
 
-        if (seen && !renderer.isVisible)
+        if (seen && !spriteRenderer.isVisible)
             Destroy();
 
         transform.position += new Vector3(direction.x * speed, direction.y * speed, 0);
@@ -30,7 +31,10 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy();
+        if (other.name != player.name)
+        {
+            Destroy();
+        }
     }
 
     void Destroy()

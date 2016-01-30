@@ -7,11 +7,11 @@ public class DemonDogBehavior : MonoBehaviour
     public GameObject Player;
     public GameObject Portal;
 
-    private DateTime ShotInterval;
+    private DateTime ShotInterval { get; set; }
 
 	void Start ()
     {
-        this.gameObject.transform.position = Portal.gameObject.transform.position;
+        gameObject.transform.position = Portal.gameObject.transform.position;
         ShotInterval = DateTime.Now;
     }
 	
