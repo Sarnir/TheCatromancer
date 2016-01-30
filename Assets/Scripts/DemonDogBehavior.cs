@@ -5,7 +5,7 @@ using UnityRandom = UnityEngine.Random;
 
 public class DemonDogBehavior : MonoBehaviour
 {
-    public GameObject Player;
+    Transform playerTransform;
     public GameObject Portal;
     private float x_max, x_min, y_max, y_min;
 
@@ -28,6 +28,7 @@ public class DemonDogBehavior : MonoBehaviour
 
     void Start ()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         gameObject.transform.position = Portal.gameObject.transform.position;
         ShotInterval = DateTime.Now;
     }
@@ -54,17 +55,16 @@ public class DemonDogBehavior : MonoBehaviour
     {
         if (DateTime.Now - ShotInterval > TimeSpan.FromSeconds(shotIntervalBase + (UnityRandom.value * 2)))
         {
-            currentProjectile = CreateProjectile(Input.mousePosition);
+            currentProjectile = CreateProjectile();
             ShotInterval = DateTime.Now;
         }
         
         gameObject.transform.position += new Vector3(UnityRandom.value - 0.5f, UnityRandom.value - 0.5f, 0);
     }
 
-    GameObject CreateProjectile(Vector2 mousePosition)
+    GameObject CreateProjectile()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 direction = (Vector2)Player.transform.position - (Vector2)transform.position;
+        Vector2 direction = (Vector2)playerTransform.position - (Vector2)transform.position;
         direction.Normalize();
 
         GameObject projectile = Instantiate(projectilePrefab);
@@ -72,7 +72,7 @@ public class DemonDogBehavior : MonoBehaviour
 
         // Get Angle in Radians
         float AngleRad =
-            Mathf.Atan2(Player.transform.position.y - gameObject.transform.position.y, Player.transform.position.x - gameObject.transform.position.x);
+            Mathf.Atan2(playerTransform.position.y - gameObject.transform.position.y, playerTransform.position.x - gameObject.transform.position.x);
         // Get Angle in Degrees
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
         // Rotate Object
