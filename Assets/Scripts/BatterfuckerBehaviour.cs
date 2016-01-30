@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BatterfuckerBehaviour : MonoBehaviour {
 
+    public GameObject explosionPrefab;
 
     public float Speed = 10f;
     public int Damage = 10;
@@ -15,6 +16,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
     private Vector3 speed_vector;
     private float x_max, x_min, y_max, y_min;
     private PlayerController Cat;
+
+    private const int ProjectileHeroLAYER = 10;
 
 
 
@@ -51,17 +54,26 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("BatfackerCollision");
+        Debug.Log("xxx" + collision.collider.gameObject.layer);
 
         speed_vector = Cat.transform.position - transform.position;
+        
 
     }
 
+    
+    void DIE() {
+        Destroy(gameObject);
+        GameObject expl = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
+        Destroy(expl, 1);
 
+    }
 
     void OnTriggerEnter2D(Collider2D collider) {
-        Debug.Log("BatfuckerTrigger");
-
         speed_vector = Cat.transform.position - transform.position;
+        if (collider.gameObject.layer == ProjectileHeroLAYER) {
+            DIE();
+        }
     }
 
     // Update is called once per frame
