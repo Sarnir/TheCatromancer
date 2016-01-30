@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Seal : MonoBehaviour
 {
@@ -18,14 +19,22 @@ public class Seal : MonoBehaviour
     Color[] maskPixels;
     Color[] sealPixels;
 
+    float sealCompletion;
+
     void Start()
     {
+        sealCompletion = 0f;
         sealTexture = incompleteSeal.sprite.texture;
         maskPixels = sealMask.texture.GetPixels();
         sealPixels = new Color[sealMask.texture.height * sealMask.texture.width];
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
         incompleteSeal.enabled = true;
+    }
+
+    public float GetCompletion()
+    {
+        return sealCompletion;
     }
 
     void UpdateSealSprite(Vector2 positionPercent)
@@ -50,9 +59,34 @@ public class Seal : MonoBehaviour
                 }
             }
         }
+
+        sealCompletion = CalculateSealCompletion();
         
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
+    }
+
+    float CalculateSealCompletion()
+    {
+        float paintedPixels = 0;
+        float visiblePixels = 0;
+
+        for (int y = 0; y < sealTexture.height; y++)
+        {
+            for (int x = 0; x < sealTexture.width; x++)
+            {
+                var pixelIndex = (int)(sealTexture.width * y + x);
+
+                if (maskPixels[pixelIndex].a == 0f)
+                {
+                    visiblePixels++;
+                    if (sealPixels[pixelIndex].a == 1f)
+                        paintedPixels++;
+                }
+            }
+        }
+        
+        return paintedPixels/visiblePixels;
     }
 
     public void PaintSealAtPosition(Vector2 position)
@@ -70,10 +104,6 @@ public class Seal : MonoBehaviour
 
             percentage.x = (position.x - bottomLeftPoint.x) / (topRightPoint.x - bottomLeftPoint.x);
             percentage.y = (position.y - bottomLeftPoint.y) / (topRightPoint.y - bottomLeftPoint.y);
-
-            Debug.Log("Mouse Position: " + position);
-            Debug.Log("Image size: "+ imageSize.x + " " + imageSize.y);
-            Debug.Log("Percentage of the image: " + percentage.x + "% " + percentage.y + "%");
 
             UpdateSealSprite(percentage);
         }
