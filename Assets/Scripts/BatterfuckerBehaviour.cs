@@ -9,6 +9,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
     public float SinusAmpRatio = 2.0f;
     public float SinusFreqRatio = 2.0f;
 
+    public GameObject Cat;
+
     private Vector3 speed_vector;
 
 	// Use this for initialization
@@ -18,9 +20,10 @@ public class BatterfuckerBehaviour : MonoBehaviour {
         float y_speed = Speed - x_speed;
         speed_vector = new Vector3(x_speed, y_speed,0);
 
-        
-	
-	}
+
+
+
+    }
 
 
     
@@ -49,7 +52,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
         float dt = Time.deltaTime;
         transform.position += new Vector3(speed_vector.x * dt + Mathf.Sin(Time.timeSinceLevelLoad * SinusFreqRatio) * SinusAmpRatio, speed_vector.y * dt + Mathf.Sin(Time.timeSinceLevelLoad * SinusFreqRatio) * SinusAmpRatio, 0);
-        print(Mathf.Sin(Time.timeSinceLevelLoad*SinusFreqRatio)*SinusAmpRatio);
+        //print(Mathf.Sin(Time.timeSinceLevelLoad*SinusFreqRatio)*SinusAmpRatio);
+        print("Catromancer: " + Cat.transform.position.ToString()); 
 	
 	}
 
