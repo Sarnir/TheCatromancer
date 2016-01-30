@@ -11,13 +11,18 @@ public class PlayerController : MonoBehaviour
 
     public Color defaultColor;
 
-    public float ImmortalTime = 1f;
+    public float ImmortalTime = 2f;
     public float blinkFrequency = 0.1f;
     public Color blinkColor;
     public Color glowColor;
     Sprite sprite;
     SpriteRenderer spriteRenderer;
     Vector2 direction;
+
+    public float Y_sprite_padding = 5;
+    public float X_sprite_padding = 5;
+
+    private float x_max, x_min, y_max, y_min;
 
     [SerializeField]
     float movementSpeed;
@@ -33,16 +38,23 @@ public class PlayerController : MonoBehaviour
 
     GameObject currentProjectile;
 
-    void Init()
-    {
-        sprite = GetComponent<Sprite>();
-        
-        
-    }
+
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        StartBlinkSprite();
+        //StartBlinkSprite();
+
+        //
+                float distance = transform.position.z - Camera.main.transform.position.z;
+        Vector3 leftMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 0, distance));
+        Vector3 rightMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0, distance));
+        Vector3 topMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
+        Vector3 botMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, distance));
+        print(rightMostCamera.x);
+        x_min = leftMostCamera.x + X_sprite_padding;
+        x_max = rightMostCamera.x - X_sprite_padding;
+        y_min = topMostCamera.y + Y_sprite_padding;
+        y_max = botMostCamera.y - Y_sprite_padding;
     }
 
     void Update()
@@ -54,6 +66,27 @@ public class PlayerController : MonoBehaviour
         bool rc = Input.GetButton("Fire2");
         HandleMovement(direction);
         HandleMouse(lc, rc);
+
+    }
+
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("CatCollision " + collision.collider);
+
+            HandleHit();
+        
+
+        
+    }
+
+
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        Debug.Log("CatTrigger " + collider.name );
+
+            HandleHit();
+   
+
 
     }
 
@@ -74,6 +107,8 @@ public class PlayerController : MonoBehaviour
         float SpeedX = direction.x * movementSpeed;
         float SpeedY = direction.y * movementSpeed;
         transform.position += new Vector3(SpeedX, SpeedY, 0);
+        // Limit 
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, x_min, x_max), Mathf.Clamp(transform.position.y, y_min, y_max), 0);
     }
 
     GameObject CreateProjectile(Vector2 mousePosition)
@@ -98,21 +133,24 @@ public class PlayerController : MonoBehaviour
         return projectile;
     }
 
-    void HitPlayer(int power = 1) {
-        LifesCount--;
-
-    }
 
     void SetMortal() {
         isImmortal = false;
     }
 
-    void SetImmortalMortal() {
-        isImmortal = false;
+    void SetImmortal() {
+        isImmortal = true;
+        Invoke("SetMortal", ImmortalTime);
     }
 
-    public void SetImmortalForTime(float time = 2) {
- 
+
+
+    void HandleHit() {
+        if (!isImmortal) {
+            SetImmortal();
+            StartBlinkSprite();
+            LifesCount--;
+        }
     }
 
     void StartBlinkSprite() {

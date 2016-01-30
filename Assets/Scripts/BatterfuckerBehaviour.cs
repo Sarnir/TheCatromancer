@@ -40,11 +40,7 @@ public class BatterfuckerBehaviour : MonoBehaviour {
         float y_speed = Speed - x_speed;
         speed_vector = new Vector3(x_speed, y_speed,0);
 
-
-
-
-
-
+        InvokeRepeating("SpontaniusDirectionChange", 3f, 3f);
 
     }
 
@@ -54,6 +50,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("BatfackerCollision");
 
+        speed_vector = Cat.transform.position - transform.position;
+
     }
 
 
@@ -61,13 +59,7 @@ public class BatterfuckerBehaviour : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider) {
         Debug.Log("BatfuckerTrigger");
 
-
         speed_vector = Cat.transform.position - transform.position;
-        
-
-
-
-        
     }
 
     // Update is called once per frame
@@ -83,9 +75,11 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
     }
 
-    void Move () {
+    void SpontaniusDirectionChange () {
+        speed_vector = Cat.transform.position - transform.position;
+        speed_vector = speed_vector * Random.RandomRange(1,2);
 
-        
+
 
     }
 }

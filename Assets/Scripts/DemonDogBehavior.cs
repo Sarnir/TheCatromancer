@@ -7,6 +7,7 @@ public class DemonDogBehavior : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Portal;
+    private float x_max, x_min, y_max, y_min;
 
     [SerializeField]
     GameObject projectilePrefab;
