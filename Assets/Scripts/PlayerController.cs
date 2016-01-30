@@ -6,40 +6,64 @@ using System;
 public class PlayerController : MonoBehaviour
 {    
     Sprite sprite;
+    Vector2 direction;
 
     [SerializeField]
     float movementSpeed;
 
     [SerializeField]
-    GameObject projectile;
+    float projectileOffset;
+
+    [SerializeField]
+    GameObject projectilePrefab;
+
+    GameObject currentProjectile;
 
     void Init()
     {
         sprite = GetComponent<Sprite>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        direction.x = Input.GetAxis("Horizontal");
+        direction.y = Input.GetAxis("Vertical");
+
         bool lc = Input.GetButtonDown("Fire1");
         bool rc = Input.GetButtonDown("Fire2");
-        HandleMovement(h, v);
+        HandleMovement(direction);
         HandleMouse(lc, rc);
     }
 
-    private void HandleMouse(bool lc, bool rc)
+    private void HandleMouse(bool leftClick, bool rightClick)
     {
-        if(lc)
-            Debug.Log("Left CLick!");
-        if(rc)
-            Debug.Log("Right CLick!");
+        if (leftClick && currentProjectile == null)
+        {
+            currentProjectile = CreateProjectile(Input.mousePosition);
+        }
+        if(rightClick)
+        {
+
+        }
     }
 
-    private void HandleMovement(float h, float v)
+    private void HandleMovement(Vector2 direction)
     {
-        float SpeedX = h * movementSpeed;
-        float SpeedY = v * movementSpeed;
+        float SpeedX = direction.x * movementSpeed;
+        float SpeedY = direction.y * movementSpeed;
         transform.position += new Vector3(SpeedX, SpeedY, 0);
+    }
+
+    GameObject CreateProjectile(Vector2 mousePosition)
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 direction = mousePosition - (Vector2)transform.position;
+        direction.Normalize();
+
+        GameObject projectile = Instantiate(projectilePrefab);
+        projectile.GetComponent<Projectile>().direction = direction;
+        projectile.transform.position = transform.position + new Vector3(projectileOffset * direction.x, projectileOffset * direction.y);
+
+        return projectile;
     }
 }
