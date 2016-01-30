@@ -144,6 +144,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcf3ab03926b0045802a8954f861478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isImmortal: 0
+  LifesCount: 5
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  ImmortalTime: 1
+  blinkFrequency: 0.1
+  blinkColor: {r: 1, g: 0, b: 0, a: 1}
+  glowColor: {r: 0.90344834, g: 1, b: 0, a: 1}
   movementSpeed: 0.2
   projectileOffset: 2
   projectilePrefab: {fileID: 118964, guid: 6c6116ed36b1f2149b528fbd5640f69e, type: 2}
