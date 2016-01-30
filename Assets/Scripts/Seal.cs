@@ -34,7 +34,8 @@ public class Seal : MonoBehaviour
         sealTexture.Apply();
         incompleteSeal.enabled = true;
 
-       
+        var collider = gameObject.AddComponent<PolygonCollider2D>();
+        collider.isTrigger = true;
     }
 
     public float GetCompletion()
@@ -106,7 +107,7 @@ public class Seal : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
         Vector2 percentage = new Vector2();
 
-        if (hit.collider != null)
+        if (hit.collider != null && hit.collider.tag == "Seal")
         {
             var other = hit.collider.gameObject;
             var imageSize = other.GetComponent<SpriteRenderer>().bounds.size;

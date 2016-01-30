@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11400590}
   - 50: {fileID: 5033354}
   - 60: {fileID: 6088866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Baterfucker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,6 +207,10 @@ Prefab:
       propertyPath: explosionPrefab
       value: 
       objectReference: {fileID: 100000, guid: e6ab56e4714ff4154ac034cf28db78b2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184956}
