@@ -41,16 +41,16 @@ public class PlayerController : MonoBehaviour
     Seal seal;
 
     GameObject currentProjectile;
-
-
+    Animator animator;
+    Vector3 originalScale;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         polygonCollider = GetComponent<PolygonCollider2D>();
-        //StartBlinkSprite();
+        animator = GetComponent<Animator>();
+        originalScale = transform.localScale;
 
-        //
-                float distance = transform.position.z - Camera.main.transform.position.z;
+        float distance = transform.position.z - Camera.main.transform.position.z;
         Vector3 leftMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 0, distance));
         Vector3 rightMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0, distance));
         Vector3 topMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
@@ -115,6 +115,14 @@ public class PlayerController : MonoBehaviour
         float SpeedX = direction.x * movementSpeed;
         float SpeedY = direction.y * movementSpeed;
         transform.position += new Vector3(SpeedX, SpeedY, 0);
+
+        animator.SetBool("MoveLeftRight", direction.x != 0);
+
+        if (direction.x < 0)
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
+        else
+            transform.localScale = originalScale;
+
         // Limit 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, x_min, x_max), Mathf.Clamp(transform.position.y, y_min, y_max), 0);
     }
