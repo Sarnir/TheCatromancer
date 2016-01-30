@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public bool isImmortal = false;
     public int LifesCount = 5;
 
+    private const int EnemyLAYER = 9;
+    private const int ProjectileEnemyLAYER = 11;
+
 
     public Color defaultColor;
 
@@ -20,8 +23,8 @@ public class PlayerController : MonoBehaviour
     Vector2 direction;
     PolygonCollider2D polygonCollider;
 
-    public float Y_sprite_padding = 5;
-    public float X_sprite_padding = 5;
+    private float Y_sprite_padding = 1;
+    private float X_sprite_padding = 1;
 
     private float x_max, x_min, y_max, y_min;
 
@@ -38,16 +41,16 @@ public class PlayerController : MonoBehaviour
     Seal seal;
 
     GameObject currentProjectile;
-    Animator animator;
-    Vector3 originalScale;
+
+
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         polygonCollider = GetComponent<PolygonCollider2D>();
-        animator = GetComponent<Animator>();
-        originalScale = transform.localScale;
-        
-        float distance = transform.position.z - Camera.main.transform.position.z;
+        //StartBlinkSprite();
+
+        //
+                float distance = transform.position.z - Camera.main.transform.position.z;
         Vector3 leftMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 0, distance));
         Vector3 rightMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0, distance));
         Vector3 topMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
@@ -72,16 +75,27 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        HandleHit();
+    void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("CatCollision " + collision.collider);
+        int collision_layer = collision.collider.gameObject.layer;
+        if (collision_layer == ProjectileEnemyLAYER || collision_layer == EnemyLAYER) {
+            HandleHit();
+        }
+        
+
+        
     }
 
 
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        HandleHit();
+    void OnTriggerEnter2D(Collider2D collider) {
+        Debug.Log("CatTrigger " + collider.name );
+        int collision_layer = collider.gameObject.layer;
+        if (collision_layer == ProjectileEnemyLAYER || collision_layer == EnemyLAYER) {
+            HandleHit();
+        }
+
+
     }
 
     private void HandleMouse(bool leftClick, bool rightClick)
@@ -98,23 +112,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement(Vector2 direction)
     {
-        Debug.Log("Direction = " + direction);
         float SpeedX = direction.x * movementSpeed;
         float SpeedY = direction.y * movementSpeed;
         transform.position += new Vector3(SpeedX, SpeedY, 0);
-
-        animator.SetBool("MoveUp", direction.y > 0);
-        animator.SetBool("MoveDown", direction.y < 0);
-        animator.SetBool("MoveLeftRight", direction.x != 0);
-
-        float scaleX = transform.localScale.x;
-        if(direction.x < 0 && transform.localScale.x > 0)
-            scaleX = -originalScale.x;
-        else if (direction.x > 0 && transform.localScale.x < 0)
-            scaleX = originalScale.x;
-         
-        transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
-
         // Limit 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, x_min, x_max), Mathf.Clamp(transform.position.y, y_min, y_max), 0);
     }

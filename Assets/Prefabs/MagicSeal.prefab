@@ -285,6 +285,7 @@ MonoBehaviour:
   incompleteSeal: {fileID: 21284376}
   sealMask: {fileID: 21300000, guid: f41f93dfd024d474c924dcb2d691b772, type: 3}
   PaintRadius: 15
+  CompletedUiText: {fileID: 0}
 --- !u!212 &21284376
 SpriteRenderer:
   m_ObjectHideFlags: 1

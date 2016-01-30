@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
@@ -13,6 +14,8 @@ public class Seal : MonoBehaviour
     [SerializeField]
     [Range(1, 1000)]
     int PaintRadius = 1;
+
+    public Text CompletedUiText;
 
     Texture2D sealTexture;
 
@@ -30,6 +33,8 @@ public class Seal : MonoBehaviour
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
         incompleteSeal.enabled = true;
+
+       
     }
 
     public float GetCompletion()
@@ -61,9 +66,15 @@ public class Seal : MonoBehaviour
         }
 
         sealCompletion = CalculateSealCompletion();
+        UpdateUiTextValue(sealCompletion);
+        
         
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
+    }
+
+    void UpdateUiTextValue(float value) {
+        CompletedUiText.text = (value * 100).ToString().Split('.')[0] + "%";
     }
 
     float CalculateSealCompletion()
@@ -85,6 +96,7 @@ public class Seal : MonoBehaviour
                 }
             }
         }
+        
         
         return paintedPixels/visiblePixels;
     }
@@ -108,4 +120,6 @@ public class Seal : MonoBehaviour
             UpdateSealSprite(percentage);
         }
     }
+
+
 }

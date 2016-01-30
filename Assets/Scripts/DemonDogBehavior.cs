@@ -9,6 +9,10 @@ public class DemonDogBehavior : MonoBehaviour
     public GameObject Portal;
     private float x_max, x_min, y_max, y_min;
 
+    public int hitsToKill = 2;
+    public GameObject explosionPrefab;
+    private const int ProjectileHeroLAYER = 10;
+
     [SerializeField]
     GameObject projectilePrefab;
 
@@ -27,8 +31,26 @@ public class DemonDogBehavior : MonoBehaviour
         gameObject.transform.position = Portal.gameObject.transform.position;
         ShotInterval = DateTime.Now;
     }
-	
-	void Update ()
+
+    void DIE() {
+        Destroy(gameObject);
+        GameObject expl = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
+        Destroy(expl, 1);
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+
+
+        if (collider.gameObject.layer == ProjectileHeroLAYER) {
+            hitsToKill--;
+            if (hitsToKill <= 0) {
+                DIE();
+            }
+        }
+    }
+
+    void Update ()
     {
         if (DateTime.Now - ShotInterval > TimeSpan.FromSeconds(shotIntervalBase + (UnityRandom.value * 2)))
         {
