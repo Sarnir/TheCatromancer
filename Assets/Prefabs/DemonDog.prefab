@@ -79,7 +79,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af14e668f4d28a459c25e50db296f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 180046, guid: f456d00623c59d74298bf5d9b8ec0eff, type: 2}
   Portal: {fileID: 142076, guid: 3118fc9419c79384e98fc89369bae983, type: 2}
   hitsToKill: 2
   explosionPrefab: {fileID: 100002, guid: 748eb41b584bb49b99a42da7420e5d1e, type: 2}
@@ -126,7 +125,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 180046, guid: f456d00623c59d74298bf5d9b8ec0eff, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: projectileOffset
       value: 2
