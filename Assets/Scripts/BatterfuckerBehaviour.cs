@@ -6,6 +6,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
     public float Speed = 10f;
     public int Damage = 10;
+    public float SinusAmpRatio = 2.0f;
+    public float SinusFreqRatio = 2.0f;
 
     private Vector3 speed_vector;
 
@@ -19,6 +21,9 @@ public class BatterfuckerBehaviour : MonoBehaviour {
         
 	
 	}
+
+
+    
 
     void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("BatfackerCollision");
@@ -38,7 +43,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
     void Update () {
 
         float dt = Time.deltaTime;
-        transform.position += new Vector3(speed_vector.x * dt, speed_vector.y * dt, 0); 
+        transform.position += new Vector3(speed_vector.x * dt + Mathf.Sin(Time.timeSinceLevelLoad * SinusFreqRatio) * SinusAmpRatio, speed_vector.y * dt + Mathf.Sin(Time.timeSinceLevelLoad * SinusFreqRatio) * SinusAmpRatio, 0);
+        print(Mathf.Sin(Time.timeSinceLevelLoad*SinusFreqRatio)*SinusAmpRatio);
 	
 	}
 
