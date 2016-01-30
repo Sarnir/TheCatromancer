@@ -11,15 +11,17 @@ public class BatterfuckerBehaviour : MonoBehaviour {
     public float Y_sprite_padding = 5;
     public float X_sprite_padding = 5;
 
-    public GameObject Cat;
 
     private Vector3 speed_vector;
     private float x_max, x_min, y_max, y_min;
+    private PlayerController Cat;
 
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+
+        Cat = GameObject.FindObjectOfType<PlayerController>();
 
         float distance = transform.position.z - Camera.main.transform.position.z;
         Vector3 leftMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 0, distance));
@@ -62,7 +64,7 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
         speed_vector = Cat.transform.position - transform.position;
         
-        print(speed_vector.normalized);
+
 
 
         
