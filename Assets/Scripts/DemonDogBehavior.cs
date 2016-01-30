@@ -37,7 +37,6 @@ public class DemonDogBehavior : MonoBehaviour
         }
         
         gameObject.transform.position += new Vector3(UnityRandom.value - 0.5f, UnityRandom.value - 0.5f, 0);
-        
     }
 
     GameObject CreateProjectile(Vector2 mousePosition)
