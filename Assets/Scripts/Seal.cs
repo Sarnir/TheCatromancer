@@ -28,9 +28,12 @@ public class Seal : MonoBehaviour
     Candle[] candles;
 
     float sealCompletion;
+    private AudioSource audioSource;
 
     void Start()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.mute = true;
         sealCompletion = 0f;
         sealTexture = incompleteSeal.sprite.texture;
         maskPixels = sealMask.texture.GetPixels();
@@ -65,6 +68,7 @@ public class Seal : MonoBehaviour
 
     void UpdateSealSprite(Vector2 positionPercent)
     {
+        StartDrawingSound();
         Vector2 point = new Vector2(positionPercent.x * sealTexture.width, positionPercent.y * sealTexture.height);
         int pixelIndex = (int)(sealTexture.width * point.y + point.x);
 
@@ -89,6 +93,7 @@ public class Seal : MonoBehaviour
         sealCompletion = CalculateSealCompletion();
         UpdateUiTextValue(sealCompletion);
 
+
         if (sealCompletion >= 0.98f)
         {
             if (PlayerPrefs.GetInt("CurrentLevel") == 5)
@@ -106,6 +111,16 @@ public class Seal : MonoBehaviour
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
     }
+
+    void StartDrawingSound() {
+        audioSource.mute = false;
+        Invoke("StopDrawingSound", 0.4f);
+    }
+
+    void StopDrawingSound() {
+        audioSource.mute = true;
+    }
+
 
     void UpdateUiTextValue(float value) {
         CompletedUiText.text = (value * 100).ToString().Split('.')[0] + "%";
