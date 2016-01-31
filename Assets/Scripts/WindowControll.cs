@@ -19,7 +19,6 @@ public class WindowControll : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        AutoOpenTime = 20 / PlayerPrefs.GetInt("CurrentLevel");
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         spawner = gameObject.GetComponentInParent<SpawnerController>();
         audioSource = gameObject.GetComponent<AudioSource>();

@@ -273,18 +273,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcf3ab03926b0045802a8954f861478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isImmortal: 1
+  isImmortal: 0
   LifesCount: 5
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   ImmortalTime: 1
   blinkFrequency: 0.1
-  blinkColor: {r: 1, g: 0, b: 0, a: 1}
-  glowColor: {r: 0.90344834, g: 1, b: 0, a: 1}
+  blinkColor: {r: 1, g: 0, b: 0, a: 0.134}
+  glowColor: {r: 0.90344834, g: 1, b: 0, a: 0.772}
   movementSpeed: 0.2
   projectileOffset: 2
   projectilePrefab: {fileID: 118964, guid: 6c6116ed36b1f2149b528fbd5640f69e, type: 2}
   seal: {fileID: 0}
-  soundCatHit: {fileID: 8300000, guid: 6cbd6066691eeff45bc2a5306aaca055, type: 3}
+  soundCatHit:
+  - {fileID: 8300000, guid: c5193d6856aacae46a35360061b82eb7, type: 3}
+  - {fileID: 8300000, guid: b58c5ee2107b2dd439dc6d95ffaa490d, type: 3}
+  - {fileID: 8300000, guid: 9cec64999c5cfd948946bf933db28ec0, type: 3}
+  - {fileID: 8300000, guid: 6e8aebd5388cbab4db1dfa1c3059b671, type: 3}
 --- !u!212 &21240922
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -356,8 +360,12 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: isImmortal
-      value: 1
+      propertyPath: blinkColor.a
+      value: 0.134
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: glowColor.a
+      value: 0.772
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

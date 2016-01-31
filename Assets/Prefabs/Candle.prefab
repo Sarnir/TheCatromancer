@@ -132,8 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CandleLit: {fileID: 21300010, guid: 113f4422d8aee1d4fb26d00b227c4a5c, type: 3}
   CandleBlown: {fileID: 21300020, guid: 113f4422d8aee1d4fb26d00b227c4a5c, type: 3}
-  LitSound: {fileID: 8300000, guid: a78f0b1e1724bf343930ac4b09b212ae, type: 3}
-  BlowSound: {fileID: 8300000, guid: 31c84da78237593448c77e00e538db9b, type: 3}
+  minCandleTime: 0
+  maxCandleTime: 0
+  LitSound: {fileID: 8300000, guid: a011db2b262f9344a9e16078c3054816, type: 3}
+  BlowSound: {fileID: 8300000, guid: 78560cc869d6eb244bd4cb974837c2ee, type: 3}
 --- !u!212 &21292424
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -194,11 +196,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: LitSound
       value: 
-      objectReference: {fileID: 8300000, guid: a78f0b1e1724bf343930ac4b09b212ae, type: 3}
+      objectReference: {fileID: 8300000, guid: a011db2b262f9344a9e16078c3054816, type: 3}
     - target: {fileID: 0}
       propertyPath: BlowSound
       value: 
-      objectReference: {fileID: 8300000, guid: 31c84da78237593448c77e00e538db9b, type: 3}
+      objectReference: {fileID: 8300000, guid: 78560cc869d6eb244bd4cb974837c2ee, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149214}
