@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Seal : MonoBehaviour
 {
@@ -77,8 +78,20 @@ public class Seal : MonoBehaviour
 
         sealCompletion = CalculateSealCompletion();
         UpdateUiTextValue(sealCompletion);
-        
-        
+
+        if (sealCompletion >= 0.98f)
+        {
+            if (PlayerPrefs.GetInt("CurrentLevel") == 5)
+            {
+                // trigger cat god appearance
+            }
+            else
+            {
+                SceneManager.LoadScene("success");
+            }
+        }
+
+
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
     }
