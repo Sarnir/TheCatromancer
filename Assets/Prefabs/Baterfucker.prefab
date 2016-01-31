@@ -216,8 +216,8 @@ MonoBehaviour:
   Damage: 10
   Y_sprite_padding: 0.2
   X_sprite_padding: 0.5
-  SpawnSound: {fileID: 8300000, guid: 31c84da78237593448c77e00e538db9b, type: 3}
-  DieSound: {fileID: 8300000, guid: 6cbd6066691eeff45bc2a5306aaca055, type: 3}
+  SpawnSound: {fileID: 8300000, guid: 830ba8405d8bbba4baf5f7b18b4d2277, type: 3}
+  DieSound: {fileID: 8300000, guid: 5c8ab1fe6f2d2584a9e671b947a778da, type: 3}
 --- !u!212 &21239814
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -303,11 +303,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: SpawnSound
       value: 
-      objectReference: {fileID: 8300000, guid: 31c84da78237593448c77e00e538db9b, type: 3}
+      objectReference: {fileID: 8300000, guid: 830ba8405d8bbba4baf5f7b18b4d2277, type: 3}
     - target: {fileID: 0}
       propertyPath: DieSound
       value: 
-      objectReference: {fileID: 8300000, guid: 6cbd6066691eeff45bc2a5306aaca055, type: 3}
+      objectReference: {fileID: 8300000, guid: 5c8ab1fe6f2d2584a9e671b947a778da, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184956}

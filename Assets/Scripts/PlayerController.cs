@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     Vector3 originalScale;
 
     private AudioSource audioSource;
-    public AudioClip soundCatHit;
+    public AudioClip[] soundCatHit;
 
 
     void Start()
@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
 
         if (!isImmortal)
         {
-            audioSource.PlayOneShot(soundCatHit);
+            audioSource.PlayOneShot(soundCatHit[Random.Range(0,3)]);
             SetImmortal();
             StartBlinkSprite();
             LifesCount--;

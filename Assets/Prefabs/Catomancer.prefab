@@ -284,7 +284,11 @@ MonoBehaviour:
   projectileOffset: 2
   projectilePrefab: {fileID: 118964, guid: 6c6116ed36b1f2149b528fbd5640f69e, type: 2}
   seal: {fileID: 0}
-  soundCatHit: {fileID: 8300000, guid: 6cbd6066691eeff45bc2a5306aaca055, type: 3}
+  soundCatHit:
+  - {fileID: 8300000, guid: c5193d6856aacae46a35360061b82eb7, type: 3}
+  - {fileID: 8300000, guid: b58c5ee2107b2dd439dc6d95ffaa490d, type: 3}
+  - {fileID: 8300000, guid: 9cec64999c5cfd948946bf933db28ec0, type: 3}
+  - {fileID: 8300000, guid: 6e8aebd5388cbab4db1dfa1c3059b671, type: 3}
 --- !u!212 &21240922
 SpriteRenderer:
   m_ObjectHideFlags: 1
