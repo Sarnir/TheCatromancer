@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 418282}
   - 212: {fileID: 21259366}
+  - 114: {fileID: 11427992}
   m_Layer: 0
   m_Name: Scroll
   m_TagString: Untagged
@@ -22,12 +23,29 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7, y: 6.58, z: 0}
+  m_LocalRotation: {x: 0.1102756, y: 0.43074328, z: 0.22214873, w: 0.8677266}
+  m_LocalPosition: {x: -10.18, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11427992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e9a97aac0ff984c8ed31d09df6fe98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Monster: {fileID: 199424, guid: 1bd6e2487aaa597488d5047a78ec9003, type: 2}
+  TimeToActivate: 0
+  Active: 0
+  PlayerTriggeredClosing: 0
+  SpawnIntervalBase: 4
+  SpawnPositionShift: {x: 0, y: -1, z: 0}
 --- !u!212 &21259366
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -52,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 733765713
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 113f4422d8aee1d4fb26d00b227c4a5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
