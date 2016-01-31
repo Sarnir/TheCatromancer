@@ -36,8 +36,14 @@ public class MusicManager : MonoBehaviour {
 
     }
 
+    void Update() {
+       
+
+    }
+
     public void ChangeVolume(float volume) {
         audioSource = GetComponent<AudioSource>();
+
         audioSource.volume = volume;
     }
 	
@@ -48,11 +54,11 @@ public class MusicManager : MonoBehaviour {
             int ActualSceneIdx = SceneManager.GetActiveScene().buildIndex;
             AudioClip thisLevelMusic = LevelMusic[ActualSceneIdx];
             audioSource = GetComponent<AudioSource>();
-            if (thisLevelMusic && lastSceneIdx != level) {
+           // if (thisLevelMusic && lastSceneIdx != level) {
                 lastSceneIdx = level;
                 audioSource.clip = thisLevelMusic;
                 audioSource.Play();
-            }
+           // }
         }
         catch {
             Debug.Log("not found clip " + name + "  " + level.ToString());
