@@ -28,7 +28,7 @@ public class Seal : MonoBehaviour
     Candle[] candles;
 
     float sealCompletion;
-    private float CompletedSoundLength = 0.3f;
+    private float CompletedSoundLength = 0.2f;
     private float ActualCompletedSoundLength = 0f;
     private AudioSource audioSource;
     private bool isDrawing = false;
