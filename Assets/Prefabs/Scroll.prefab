@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21259366}
   - 114: {fileID: 11427992}
   - 114: {fileID: 11436852}
+  - 114: {fileID: 11442816}
   m_Layer: 0
   m_Name: Scroll
   m_TagString: Untagged
@@ -49,6 +50,24 @@ MonoBehaviour:
   SpawnPositionShift: {x: 0, y: -1, z: 0}
   EpicStart: 0
 --- !u!114 &11436852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e9a97aac0ff984c8ed31d09df6fe98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Monster: {fileID: 199424, guid: 1bd6e2487aaa597488d5047a78ec9003, type: 2}
+  TimeToActivate: 0
+  Active: 0
+  PlayerTriggeredClosing: 0
+  SpawnIntervalBase: 4
+  SpawnPositionShift: {x: 0, y: -1, z: 0}
+  EpicStart: 0
+--- !u!114 &11442816
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
