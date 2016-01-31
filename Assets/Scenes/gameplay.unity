@@ -230,11 +230,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 444206, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.99
+      value: 9.82
       objectReference: {fileID: 0}
     - target: {fileID: 444206, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 444206, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
       propertyPath: m_LocalPosition.z
@@ -260,26 +260,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 11454590, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
-      propertyPath: SpawnIntervalBase
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11454590, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
-      propertyPath: Active
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21248240, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 733765713
-      objectReference: {fileID: 0}
-    - target: {fileID: 143544, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 21248240, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300004, guid: 8085e39326642494388e6653b8090641,
+      objectReference: {fileID: 21300004, guid: 845b5d2a638051147b5640e552aab380,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27b15b7a1092a4a498988163afb77490, type: 2}
