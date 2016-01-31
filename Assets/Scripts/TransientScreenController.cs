@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class TransientScreenController : MonoBehaviour
 {
     public GameObject ContinueSign;
     public int SceneNr;
+    public bool Died;
 
     private DateTime AppearanceTime;
     private bool CanBeClosed;
@@ -30,19 +32,28 @@ public class TransientScreenController : MonoBehaviour
         {
             if (CanBeClosed)
             {
-                if (SceneNr == 1) // dla przejścia do kolejnego poziomu
+                if (Died || Application.loadedLevelName == "endgame")
                 {
-                    if (PlayerPrefs.HasKey("CurrentLevel"))
+                    SceneManager.LoadScene("menu");
+                }
+                else
+                {
+                    int newLevel = PlayerPrefs.GetInt("PreviousLevel") + 1;
+                    PlayerPrefs.SetInt("CurrentLevel", newLevel);
+
+                    if (newLevel == 4)
                     {
-                        PlayerPrefs.SetInt("CurrentLevel", PlayerPrefs.GetInt("CurrentLevel") + 1);
+                        SceneManager.LoadScene("endgame");
+                    }
+                    else if (newLevel == 3)
+                    {
+                        SceneManager.LoadScene("gameplay");
                     }
                     else
                     {
-                        PlayerPrefs.SetInt("CurrentLevel", 1);
+                        SceneManager.LoadScene("level" + newLevel);
                     }
                 }
-
-                SceneManager.LoadScene(SceneNr);
             }
         }
     }

@@ -5,6 +5,7 @@ public class PlayButton : MonoBehaviour
 {
 	void OnMouseUp()
     {
-        SceneManager.LoadScene("gameplay");
+        PlayerPrefs.SetInt("CurrentLevel", 1);
+        SceneManager.LoadScene("level1");
 	}
 }

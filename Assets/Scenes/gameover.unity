@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ContinueSign: {fileID: 1222762321}
   SceneNr: 0
+  Died: 1
 --- !u!4 &199696088
 Transform:
   m_ObjectHideFlags: 0

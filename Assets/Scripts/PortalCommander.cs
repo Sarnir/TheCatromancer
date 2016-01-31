@@ -10,7 +10,7 @@ public class PortalCommander : MonoBehaviour {
 
     public Sprite PortalOpen;
     public Sprite PortalClose;
-    public float AutoOpenTime = 6;
+    public float AutoOpenTime = 15f;
 
     public AudioClip soundOpen;
     public AudioClip soundClose;
@@ -20,18 +20,16 @@ public class PortalCommander : MonoBehaviour {
 
     private SpriteRenderer spriteRenderer;
     private SpawnerController spawner;
-
-
+    
     private const string HeroNAME = "Catomancer";
-    // Use this for initialization
-    void Start() {
+
+    void Start()
+    {
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         spawner = gameObject.GetComponentInParent<SpawnerController>();
         audioSource = gameObject.GetComponent<AudioSource>();
         ClosePortal();
         Invoke("OpenPortal", AutoOpenTime);
-
-
     }
 
     // Update is called once per frame
