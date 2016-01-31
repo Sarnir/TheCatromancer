@@ -7,6 +7,12 @@ public class LifeKeeper : MonoBehaviour
     private GameObject HeartPrefab;
     private PlayerController Player;
 
+    [SerializeField]
+    Sprite LifeOn;
+
+    [SerializeField]
+    Sprite LifeOff;
+
     void Start()
     {
         Player = GameObject.FindObjectOfType<PlayerController>();
@@ -28,11 +34,11 @@ public class LifeKeeper : MonoBehaviour
             //print(child.name);
             if (count <= lifes)
             {
-                child.GetComponent<SpriteRenderer>().enabled = true;
+                child.GetComponent<SpriteRenderer>().sprite = LifeOn;
             }
             else
             {
-                child.GetComponent<SpriteRenderer>().enabled = false;
+                child.GetComponent<SpriteRenderer>().sprite = LifeOff;
             }
         }
         return null;
