@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
     void SetImmortal() {
         isImmortal = true;
         Invoke("SetMortal", ImmortalTime);
-        polygonCollider.enabled = false;
+        //polygonCollider.enabled = false;
     }
 
 
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
     void StopBlinkSprie() {
         CancelInvoke("SetSpriteHi");
         CancelInvoke("SetSpriteLow");
-        polygonCollider.enabled = true;
+        //polygonCollider.enabled = true;
         spriteRenderer.color = defaultColor;
     }
 
