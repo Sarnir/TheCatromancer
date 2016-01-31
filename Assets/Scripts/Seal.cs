@@ -39,21 +39,6 @@ public class Seal : MonoBehaviour
         collider.isTrigger = true;
     }
 
-    void Update()
-    {
-        if (sealCompletion >= 98f)
-        {
-            if (PlayerPrefs.GetInt("CurrentLevel") == 5)
-            {
-                // trigger cat god appearance
-            }
-            else
-            {
-                SceneManager.LoadScene("success");
-            }
-        }
-    }
-
     public float GetCompletion()
     {
         return sealCompletion;
@@ -84,8 +69,20 @@ public class Seal : MonoBehaviour
 
         sealCompletion = CalculateSealCompletion();
         UpdateUiTextValue(sealCompletion);
-        
-        
+
+        if (sealCompletion >= 0.98f)
+        {
+            if (PlayerPrefs.GetInt("CurrentLevel") == 5)
+            {
+                // trigger cat god appearance
+            }
+            else
+            {
+                SceneManager.LoadScene("success");
+            }
+        }
+
+
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
     }
