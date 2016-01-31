@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.318076, y: 2.4244666, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,7 +57,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af14e668f4d28a459c25e50db296f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Portal: {fileID: 142076, guid: 3118fc9419c79384e98fc89369bae983, type: 2}
+  SpawnShift: {x: 0.06, y: -3.22, z: 0}
   hitsToKill: 2
   explosionPrefab: {fileID: 100002, guid: 748eb41b584bb49b99a42da7420e5d1e, type: 2}
   projectilePrefab: {fileID: 184786, guid: 08eb5e8a479d26f4a96d2edb0d87700c, type: 2}
@@ -156,11 +156,31 @@ Prefab:
       objectReference: {fileID: 100002, guid: 748eb41b584bb49b99a42da7420e5d1e, type: 2}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SpawnShift.y
+      value: -3.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: -2.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SpawnShift.x
+      value: 0.06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

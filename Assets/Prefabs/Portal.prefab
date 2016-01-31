@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3, y: 5.81, z: 0}
+  m_LocalPosition: {x: -4.3, y: 2.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480036}
@@ -70,9 +70,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02, y: -2.65}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.72, y: 1}
 --- !u!114 &11407138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,9 +85,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInBounds: 0
+  isOpen: 0
   PortalOpen: {fileID: 21300000, guid: 96b200ee8b326eb4b833d8ccf918617d, type: 3}
   PortalClose: {fileID: 21300000, guid: 1f4e9f16c025ee840bb60e30a34b5534, type: 3}
-  AutoOpenTime: 5
+  AutoOpenTime: 7
 --- !u!114 &11454030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,9 +102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Monster: {fileID: 199424, guid: 1bd6e2487aaa597488d5047a78ec9003, type: 2}
   TimeToActivate: 0
-  Active: 0
+  Active: 1
   PlayerTriggeredClosing: 0
   SpawnIntervalBase: 4
+  SpawnPositionShift: {x: 0, y: 0, z: 0}
+  EpicStart: 0
 --- !u!212 &21232970
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -140,7 +143,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: SpawnPositionShift.x
+      value: -13.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 142076}

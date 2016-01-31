@@ -4,6 +4,7 @@ using System.Collections;
 public class PortalCommander : MonoBehaviour {
 
     public bool playerInBounds = false;
+    public bool isOpen = false;
 
     public Sprite PortalOpen;
     public Sprite PortalClose;
@@ -27,8 +28,9 @@ public class PortalCommander : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        if (Input.GetKeyDown(KeyCode.Space) && playerInBounds) {
+        if (Input.GetKeyDown(KeyCode.Space) && playerInBounds && isOpen) {
             ClosePortal();
+            Debug.Log("CloseREQUEST");
             Invoke("OpenPortal", AutoOpenTime);
 
 
@@ -43,11 +45,13 @@ public class PortalCommander : MonoBehaviour {
     void ClosePortal() {
         spriteRenderer.sprite = PortalClose;
         spawner.Active = false;
+        isOpen = false;
     }
 
     void OpenPortal() {
         spriteRenderer.sprite = PortalOpen;
         spawner.Active = true;
+        isOpen = true;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
