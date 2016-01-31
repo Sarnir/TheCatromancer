@@ -16,6 +16,9 @@ public class Seal : MonoBehaviour
     [Range(1, 1000)]
     int PaintRadius = 1;
 
+    [SerializeField]
+    LayerMask raycastMask;
+
     public Text CompletedUiText;
 
     Texture2D sealTexture;
@@ -131,7 +134,7 @@ public class Seal : MonoBehaviour
                 return;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
+        RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero, 1f, raycastMask);
         Vector2 percentage = new Vector2();
 
         if (hit.collider != null && hit.collider.tag == "Seal")
