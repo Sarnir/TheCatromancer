@@ -43,7 +43,7 @@ public class DemonDogBehavior : MonoBehaviour
         Destroy(gameObject);
         GameObject expl = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
         AudioSource.PlayClipAtPoint(DieSound,transform.position);
-        Destroy(expl, 1);
+        Destroy(expl, 0.5f);
 
     }
 
