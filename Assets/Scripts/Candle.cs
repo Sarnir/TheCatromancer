@@ -9,6 +9,12 @@ public class Candle : MonoBehaviour
     [SerializeField]
     Sprite CandleBlown;
 
+    [SerializeField]
+    float minCandleTime = 0f;
+
+    [SerializeField]
+    float maxCandleTime = 0f;
+
     SpriteRenderer spriteRenderer;
     bool playerInBounds;
 
@@ -30,7 +36,8 @@ public class Candle : MonoBehaviour
         isLit = true;
         spriteRenderer.sprite = CandleLit;
         audioSource.PlayOneShot(LitSound);
-
+        if(maxCandleTime > 0f)
+            Invoke("BlowCandle", Random.Range(minCandleTime, maxCandleTime));
     }
 
     void BlowCandle()
