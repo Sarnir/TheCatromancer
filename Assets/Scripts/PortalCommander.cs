@@ -8,21 +8,20 @@ public class PortalCommander : MonoBehaviour {
 
     public Sprite PortalOpen;
     public Sprite PortalClose;
-    public float AutoOpenTime = 6;
+    public float AutoOpenTime;
 
     private SpriteRenderer spriteRenderer;
     private SpawnerController spawner;
-
-
+    
     private const string HeroNAME = "Catomancer";
-    // Use this for initialization
-    void Start() {
+
+    void Start()
+    {
+        AutoOpenTime = 20 / PlayerPrefs.GetInt("CurrentLevel");
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         spawner = gameObject.GetComponentInParent<SpawnerController>();
         ClosePortal();
         Invoke("OpenPortal", AutoOpenTime);
-
-
     }
 
     // Update is called once per frame

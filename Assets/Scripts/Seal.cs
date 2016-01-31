@@ -90,6 +90,7 @@ public class Seal : MonoBehaviour
             }
             else
             {
+                PlayerPrefs.SetInt("PreviousLevel", PlayerPrefs.GetInt("CurrentLevel"));
                 SceneManager.LoadScene("success");
             }
         }

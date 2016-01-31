@@ -1,29 +1,26 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 
 public class WindowControll : MonoBehaviour {
     public bool playerInBounds = false;
     
     public Sprite WindowOpen;
     public Sprite WindowClose;
-    public float AutoOpenTime = 5;
+    public float AutoOpenTime;
 
     private SpriteRenderer spriteRenderer;
     private SpawnerController spawner;
 
     public bool isOpen = false;
-
-
+    
     private const string HeroNAME = "Catomancer";
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
+        AutoOpenTime = 20 / PlayerPrefs.GetInt("CurrentLevel");
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         spawner = gameObject.GetComponentInParent<SpawnerController>();
         CloseWindow();
         Invoke("OpenWindow", AutoOpenTime);
-
-
     }
 
     // Update is called once per frame
@@ -32,14 +29,7 @@ public class WindowControll : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && playerInBounds && isOpen) {
             CloseWindow();
             Invoke("OpenWindow", AutoOpenTime);
-            
-
-
         }
-
-
-
-
     }
 
     void CloseWindow() {
@@ -58,9 +48,7 @@ public class WindowControll : MonoBehaviour {
         ///Debug.Log("WindowCollision " + collision.collider);
 
     }
-
-
-
+    
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.name == HeroNAME) {
             playerInBounds = true;
@@ -72,9 +60,4 @@ public class WindowControll : MonoBehaviour {
             playerInBounds = false;
         }
     }
-
-
-
-
-
 }
