@@ -10,7 +10,7 @@ public class PortalCommander : MonoBehaviour {
 
     public Sprite PortalOpen;
     public Sprite PortalClose;
-    public float AutoOpenTime;
+    public float AutoOpenTime = 15f;
 
     public AudioClip soundOpen;
     public AudioClip soundClose;
@@ -25,7 +25,6 @@ public class PortalCommander : MonoBehaviour {
 
     void Start()
     {
-        AutoOpenTime = 20 / PlayerPrefs.GetInt("CurrentLevel");
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         spawner = gameObject.GetComponentInParent<SpawnerController>();
         audioSource = gameObject.GetComponent<AudioSource>();

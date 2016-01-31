@@ -278,8 +278,8 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   ImmortalTime: 1
   blinkFrequency: 0.1
-  blinkColor: {r: 1, g: 0, b: 0, a: 1}
-  glowColor: {r: 0.90344834, g: 1, b: 0, a: 1}
+  blinkColor: {r: 1, g: 0, b: 0, a: 0.134}
+  glowColor: {r: 0.90344834, g: 1, b: 0, a: 0.772}
   movementSpeed: 0.2
   projectileOffset: 2
   projectilePrefab: {fileID: 118964, guid: 6c6116ed36b1f2149b528fbd5640f69e, type: 2}
@@ -354,6 +354,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blinkColor.a
+      value: 0.134
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: glowColor.a
+      value: 0.772
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
