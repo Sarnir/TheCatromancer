@@ -21,6 +21,7 @@ public class SpawnerController : MonoBehaviour
 	
 	void Update ()
     {
+        
         if (Active)
         {
             timeFromLastSpawn += Time.deltaTime;
@@ -29,7 +30,7 @@ public class SpawnerController : MonoBehaviour
 
 	    if (timeFromLastSpawn > SpawnIntervalBase )
         {
-            SpawnMonster(gameObject.transform.position);
+            SpawnMonster(transform.position);
             timeFromLastSpawn = 0;
         }
     }
@@ -39,6 +40,6 @@ public class SpawnerController : MonoBehaviour
         Vector3 pos = transform.position + SpawnPositionShift;
         GameObject monster = Instantiate(Monster, transform.position, Quaternion.identity) as GameObject;
         //monster.transform.position = transform.position + new Vector3(SpawnPositionShift.x, SpawnPositionShift.y);
-        return monster;
+        return null;
     }
 }
