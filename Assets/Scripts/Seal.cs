@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Seal : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Seal : MonoBehaviour
     [SerializeField]
     [Range(1, 1000)]
     int PaintRadius = 1;
+
+    [SerializeField]
+    LayerMask raycastMask;
 
     public Text CompletedUiText;
 
@@ -77,8 +81,20 @@ public class Seal : MonoBehaviour
 
         sealCompletion = CalculateSealCompletion();
         UpdateUiTextValue(sealCompletion);
-        
-        
+
+        if (sealCompletion >= 0.98f)
+        {
+            if (PlayerPrefs.GetInt("CurrentLevel") == 5)
+            {
+                // trigger cat god appearance
+            }
+            else
+            {
+                SceneManager.LoadScene("success");
+            }
+        }
+
+
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
     }
@@ -118,7 +134,7 @@ public class Seal : MonoBehaviour
                 return;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
+        RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero, 1f, raycastMask);
         Vector2 percentage = new Vector2();
 
         if (hit.collider != null && hit.collider.tag == "Seal")

@@ -12,11 +12,18 @@ public class SpawnerController : MonoBehaviour
     public float SpawnIntervalBase;
     public Vector3 SpawnPositionShift = new Vector3(0, -1);
     private float timeFromLastSpawn;
+    public bool EpicStart = false;
+
 
     private DateTime LastTimeSpawned;
 
     void Start() {
-        timeFromLastSpawn = 0;
+        if (EpicStart) {
+            timeFromLastSpawn = SpawnIntervalBase;
+        }
+        else {
+            timeFromLastSpawn = 0;
+        }
     }
 	
 	void Update ()
@@ -26,6 +33,11 @@ public class SpawnerController : MonoBehaviour
         {
             timeFromLastSpawn += Time.deltaTime;
 
+        }
+        else {
+            if (EpicStart) {
+                timeFromLastSpawn = SpawnIntervalBase;
+            }
         }
 
 	    if (timeFromLastSpawn > SpawnIntervalBase )

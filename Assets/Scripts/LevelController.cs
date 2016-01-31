@@ -17,7 +17,7 @@ public class LevelController : MonoBehaviour
     {
 	    if (DateTime.Now - lastEvent > TimeSpan.FromSeconds(5))
         {
-            // zrób event
+            // zrób event: otwórz portal lub rozwiń zwój lub otwórz okno
         }
 	}
 }
