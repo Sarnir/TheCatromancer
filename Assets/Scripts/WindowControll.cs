@@ -4,13 +4,16 @@ using System.Collections;
 
 public class WindowControll : MonoBehaviour {
     public bool playerInBounds = false;
-    
+
+    public AudioClip SoundWindowsOpen;
+    public AudioClip SoundWindowsClose;
     public Sprite WindowOpen;
     public Sprite WindowClose;
     public float AutoOpenTime = 5;
 
     private SpriteRenderer spriteRenderer;
     private SpawnerController spawner;
+    private AudioSource audioSource;
 
     public bool isOpen = false;
 
@@ -20,6 +23,7 @@ public class WindowControll : MonoBehaviour {
     void Start() {
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         spawner = gameObject.GetComponentInParent<SpawnerController>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         CloseWindow();
         Invoke("OpenWindow", AutoOpenTime);
 
@@ -44,14 +48,19 @@ public class WindowControll : MonoBehaviour {
 
     void CloseWindow() {
         spriteRenderer.sprite = WindowClose;
+        
         spawner.Active = false;
         isOpen = false;
+
+        audioSource.PlayOneShot(SoundWindowsClose);
     }
 
     void OpenWindow() {
         spriteRenderer.sprite = WindowOpen;
         spawner.Active = true;
         isOpen = true;
+
+        audioSource.PlayOneShot(SoundWindowsOpen);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
