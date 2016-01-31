@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnShift: {x: 0.06, y: -3.22, z: 0}
-  hitsToKill: 2
+  hitsToKill: 1
   explosionPrefab: {fileID: 114262, guid: a7851dee15228b8498b2cfe9bbbf7816, type: 2}
   projectilePrefab: {fileID: 184786, guid: 08eb5e8a479d26f4a96d2edb0d87700c, type: 2}
   projectileOffset: 2
@@ -285,6 +285,10 @@ Prefab:
       propertyPath: SpawnSound
       value: 
       objectReference: {fileID: 8300000, guid: 0064126afba66c44ebb59dd054f8c45f, type: 3}
+    - target: {fileID: 0}
+      propertyPath: hitsToKill
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 199424}
