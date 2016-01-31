@@ -12,6 +12,8 @@ public class WindowControll : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private SpawnerController spawner;
 
+    public bool isOpen = false;
+
 
     private const string HeroNAME = "Catomancer";
     // Use this for initialization
@@ -27,7 +29,7 @@ public class WindowControll : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        if (Input.GetKeyDown(KeyCode.Space) && playerInBounds) {
+        if (Input.GetKeyDown(KeyCode.Space) && playerInBounds && isOpen) {
             CloseWindow();
             Invoke("OpenWindow", AutoOpenTime);
             
@@ -43,11 +45,13 @@ public class WindowControll : MonoBehaviour {
     void CloseWindow() {
         spriteRenderer.sprite = WindowClose;
         spawner.Active = false;
+        isOpen = false;
     }
 
     void OpenWindow() {
         spriteRenderer.sprite = WindowOpen;
         spawner.Active = true;
+        isOpen = true;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
