@@ -34,7 +34,14 @@ public class Seal : MonoBehaviour
         sealCompletion = 0f;
         sealTexture = incompleteSeal.sprite.texture;
         maskPixels = sealMask.texture.GetPixels();
-        sealPixels = new Color[sealMask.texture.height * sealMask.texture.width];
+        sealPixels = sealTexture.GetPixels();
+
+        // clear image
+        for (int i = 0; i < sealPixels.Length; i++)
+        {
+            sealPixels[i] = new Color(sealPixels[i].r, sealPixels[i].g, sealPixels[i].b, 0f);
+        }
+
         sealTexture.SetPixels(sealPixels);
         sealTexture.Apply();
         incompleteSeal.enabled = true;
@@ -73,7 +80,7 @@ public class Seal : MonoBehaviour
                         pixelIndex = (int)(sealTexture.width * y + x);
 
                         if (maskPixels[pixelIndex].a == 0f)
-                            sealPixels[pixelIndex] = new Color(0f, 1f, 1f, 1f);
+                            sealPixels[pixelIndex].a = 1f;
                     }
                 }
             }
@@ -129,7 +136,7 @@ public class Seal : MonoBehaviour
 
     public void PaintSealAtPosition(Vector2 position)
     {
-        foreach(var candle in candles)
+        foreach (var candle in candles)
         {
             if (!candle.isLit)
                 return;
