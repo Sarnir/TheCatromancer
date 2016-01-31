@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnShift: {x: 0.06, y: -3.22, z: 0}
   hitsToKill: 2
-  explosionPrefab: {fileID: 100002, guid: 748eb41b584bb49b99a42da7420e5d1e, type: 2}
+  explosionPrefab: {fileID: 114262, guid: a7851dee15228b8498b2cfe9bbbf7816, type: 2}
   projectilePrefab: {fileID: 184786, guid: 08eb5e8a479d26f4a96d2edb0d87700c, type: 2}
   projectileOffset: 2
   shotIntervalBase: 2
@@ -231,7 +231,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: explosionPrefab
       value: 
-      objectReference: {fileID: 100002, guid: 748eb41b584bb49b99a42da7420e5d1e, type: 2}
+      objectReference: {fileID: 114262, guid: a7851dee15228b8498b2cfe9bbbf7816, type: 2}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 0

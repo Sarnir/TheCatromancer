@@ -76,7 +76,7 @@ public class BatterfuckerBehaviour : MonoBehaviour {
         AudioSource.PlayClipAtPoint(DieSound, transform.position);
         Destroy(gameObject);
         GameObject expl = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
-        Destroy(expl, 1);
+        Destroy(expl, 0.5f);
 
     }
 
