@@ -25,17 +25,24 @@ public class DemonDogBehavior : MonoBehaviour
     private DateTime ShotInterval { get; set; }
 
     GameObject currentProjectile;
+    private AudioSource audioSource;
+    public AudioClip SpawnSound;
+    public AudioClip HitSound;
+    public AudioClip DieSound;
 
     void Start ()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         gameObject.transform.position = transform.position + SpawnShift;
         ShotInterval = DateTime.Now;
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.PlayOneShot(SpawnSound);
     }
 
     void DIE() {
         Destroy(gameObject);
         GameObject expl = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
+        AudioSource.PlayClipAtPoint(DieSound,transform.position);
         Destroy(expl, 1);
 
     }
@@ -48,6 +55,8 @@ public class DemonDogBehavior : MonoBehaviour
             if (hitsToKill <= 0) {
                 DIE();
             }
+            audioSource.PlayOneShot(HitSound);
+
         }
     }
 
