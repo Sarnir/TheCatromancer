@@ -6,9 +6,17 @@ public class PortalCommander : MonoBehaviour {
     public bool playerInBounds = false;
     public bool isOpen = false;
 
+
+
     public Sprite PortalOpen;
     public Sprite PortalClose;
     public float AutoOpenTime = 6;
+
+    public AudioClip soundOpen;
+    public AudioClip soundClose;
+    public AudioClip soundIsOppen;
+    private AudioSource audioSource; 
+
 
     private SpriteRenderer spriteRenderer;
     private SpawnerController spawner;
@@ -19,6 +27,7 @@ public class PortalCommander : MonoBehaviour {
     void Start() {
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         spawner = gameObject.GetComponentInParent<SpawnerController>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         ClosePortal();
         Invoke("OpenPortal", AutoOpenTime);
 
@@ -46,12 +55,14 @@ public class PortalCommander : MonoBehaviour {
         spriteRenderer.sprite = PortalClose;
         spawner.Active = false;
         isOpen = false;
+        audioSource.PlayOneShot(soundClose);
     }
 
     void OpenPortal() {
         spriteRenderer.sprite = PortalOpen;
         spawner.Active = true;
         isOpen = true;
+        audioSource.PlayOneShot(soundOpen);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

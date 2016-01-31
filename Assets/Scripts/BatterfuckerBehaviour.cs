@@ -19,12 +19,18 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
     private const int ProjectileHeroLAYER = 10;
 
+    public AudioClip SpawnSound;
+    //public AudioClip HitSound;
+    public AudioClip DieSound;
+    private AudioSource audioSource;
+
 
 
     // Use this for initialization
     void Start () {
 
         Cat = GameObject.FindObjectOfType<PlayerController>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         SinusAmpRatio = Random.RandomRange(0, 0.25f);
         SinusFreqRatio = Random.RandomRange(0, 2f);
 
@@ -47,6 +53,8 @@ public class BatterfuckerBehaviour : MonoBehaviour {
         float y_speed = Speed - x_speed;
         speed_vector = new Vector3(x_speed, y_speed,0);
 
+
+        audioSource.PlayOneShot(SpawnSound);
         InvokeRepeating("SpontaniusDirectionChange", 3f, 3f);
 
     }
@@ -65,6 +73,7 @@ public class BatterfuckerBehaviour : MonoBehaviour {
 
     
     void DIE() {
+        AudioSource.PlayClipAtPoint(DieSound, transform.position);
         Destroy(gameObject);
         GameObject expl = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
         Destroy(expl, 1);

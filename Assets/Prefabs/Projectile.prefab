@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.3
+  MissleLunch: {fileID: 8300000, guid: 31c84da78237593448c77e00e538db9b, type: 3}
 --- !u!212 &21297580
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -152,6 +153,14 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MissleLunch
+      value: 
+      objectReference: {fileID: 8300000, guid: 31c84da78237593448c77e00e538db9b, type: 3}
+    - target: {fileID: 0}
+      propertyPath: MissleDestroyed
+      value: 
+      objectReference: {fileID: 8300000, guid: 6cbd6066691eeff45bc2a5306aaca055, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118964}
