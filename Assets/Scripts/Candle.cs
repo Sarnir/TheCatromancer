@@ -12,10 +12,15 @@ public class Candle : MonoBehaviour
     SpriteRenderer spriteRenderer;
     bool playerInBounds;
 
+    private AudioSource audioSource;
+    public AudioClip LitSound;
+    public AudioClip BlowSound;
+
     public bool isLit { get; private set; }
 
     void Start()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
         spriteRenderer = gameObject.GetComponentInParent<SpriteRenderer>();
         BlowCandle();
     }
@@ -24,12 +29,16 @@ public class Candle : MonoBehaviour
     {
         isLit = true;
         spriteRenderer.sprite = CandleLit;
+        audioSource.PlayOneShot(LitSound);
+
     }
 
     void BlowCandle()
     {
         isLit = false;
         spriteRenderer.sprite = CandleBlown;
+        audioSource.PlayOneShot(BlowSound);
+
     }
 
     void OnTriggerEnter2D(Collider2D collider)
