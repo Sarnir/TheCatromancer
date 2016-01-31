@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcf3ab03926b0045802a8954f861478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isImmortal: 0
+  isImmortal: 1
   LifesCount: 5
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   ImmortalTime: 1
@@ -353,6 +353,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isImmortal
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
