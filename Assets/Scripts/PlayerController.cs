@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private const int EnemyLAYER = 9;
     private const int ProjectileEnemyLAYER = 11;
-
+    
 
     public Color defaultColor;
 
@@ -22,11 +22,6 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Vector2 direction;
     PolygonCollider2D polygonCollider;
-
-    private float Y_sprite_padding = 1;
-    private float X_sprite_padding = 1;
-
-    private float x_max, x_min, y_max, y_min;
 
     [SerializeField]
     float movementSpeed;
@@ -51,15 +46,6 @@ public class PlayerController : MonoBehaviour
         originalScale = transform.localScale;
 
         float distance = transform.position.z - Camera.main.transform.position.z;
-        Vector3 leftMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0.0f, 0, distance));
-        Vector3 rightMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0, distance));
-        Vector3 topMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
-        Vector3 botMostCamera = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, distance));
-        print(rightMostCamera.x);
-        x_min = leftMostCamera.x + X_sprite_padding;
-        x_max = rightMostCamera.x - X_sprite_padding;
-        y_min = topMostCamera.y + Y_sprite_padding;
-        y_max = botMostCamera.y - Y_sprite_padding;
     }
 
     void Update()
@@ -74,28 +60,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
-    void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("CatCollision " + collision.collider);
-        int collision_layer = collision.collider.gameObject.layer;
-        if (collision_layer == ProjectileEnemyLAYER || collision_layer == EnemyLAYER) {
-            HandleHit();
-        }
-        
-
-        
-    }
-
-
-
-    void OnTriggerEnter2D(Collider2D collider) {
-        Debug.Log("CatTrigger " + collider.name );
+    void OnTriggerEnter2D(Collider2D collider)
+    {
         int collision_layer = collider.gameObject.layer;
         if (collision_layer == ProjectileEnemyLAYER || collision_layer == EnemyLAYER) {
             HandleHit();
         }
-
-
     }
 
     private void HandleMouse(bool leftClick, bool rightClick)
@@ -122,9 +92,6 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
         else
             transform.localScale = originalScale;
-
-        // Limit 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, x_min, x_max), Mathf.Clamp(transform.position.y, y_min, y_max), 0);
     }
 
     GameObject CreateProjectile(Vector2 mousePosition)
@@ -157,7 +124,7 @@ public class PlayerController : MonoBehaviour
     void SetImmortal() {
         isImmortal = true;
         Invoke("SetMortal", ImmortalTime);
-        polygonCollider.enabled = false;
+        //polygonCollider.enabled = false;
     }
 
 
@@ -181,7 +148,7 @@ public class PlayerController : MonoBehaviour
     void StopBlinkSprie() {
         CancelInvoke("SetSpriteHi");
         CancelInvoke("SetSpriteLow");
-        polygonCollider.enabled = true;
+        //polygonCollider.enabled = true;
         spriteRenderer.color = defaultColor;
     }
 

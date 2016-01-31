@@ -21,6 +21,7 @@ public class Seal : MonoBehaviour
 
     Color[] maskPixels;
     Color[] sealPixels;
+    Candle[] candles;
 
     float sealCompletion;
 
@@ -34,7 +35,16 @@ public class Seal : MonoBehaviour
         sealTexture.Apply();
         incompleteSeal.enabled = true;
 
-       
+        var collider = gameObject.AddComponent<PolygonCollider2D>();
+        collider.isTrigger = true;
+
+        var candleObjects = GameObject.FindGameObjectsWithTag("Candle");
+
+        candles = new Candle[candleObjects.Length];
+        for(int i = 0; i < candleObjects.Length; i++)
+        {
+            candles[i] = candleObjects[i].GetComponent<Candle>();
+        }
     }
 
     public float GetCompletion()
@@ -97,16 +107,21 @@ public class Seal : MonoBehaviour
             }
         }
         
-        
         return paintedPixels/visiblePixels;
     }
 
     public void PaintSealAtPosition(Vector2 position)
     {
+        foreach(var candle in candles)
+        {
+            if (!candle.isLit)
+                return;
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
         Vector2 percentage = new Vector2();
 
-        if (hit.collider != null)
+        if (hit.collider != null && hit.collider.tag == "Seal")
         {
             var other = hit.collider.gameObject;
             var imageSize = other.GetComponent<SpriteRenderer>().bounds.size;
