@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 113f4422d8aee1d4fb26d00b227c4a5c
-timeCreated: 1454192208
+timeCreated: 1454196693
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -69,7 +69,7 @@ TextureImporter:
         width: 172
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -45, y: 71}
@@ -88,7 +88,7 @@ TextureImporter:
         width: 187
         height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 81.5, y: 76.5}
@@ -110,7 +110,7 @@ TextureImporter:
         width: 319
         height: 515
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 146.5, y: -22.5}
@@ -152,7 +152,7 @@ TextureImporter:
         width: 191
         height: 243
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 0.5, y: 121.5}
@@ -172,7 +172,7 @@ TextureImporter:
         width: 203
         height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 8.5, y: 123}
@@ -198,20 +198,18 @@ TextureImporter:
         x: 50
         y: 113
         width: 57
-        height: 103
+        height: 152
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 17.5, y: 35.5}
-        - {x: -1.5, y: 51.5}
-        - {x: -16.5, y: 51.5}
-        - {x: -26.5, y: 12.5}
-        - {x: -28.5, y: 0.5}
-        - {x: -28.5, y: -51.5}
-        - {x: 28.5, y: -51.5}
-        - {x: 28.5, y: -27.5}
-        - {x: 27.5, y: -25.5}
+      - - {x: -15.5, y: 29}
+        - {x: -27.5, y: -12}
+        - {x: -28.5, y: -25}
+        - {x: -28.5, y: -76}
+        - {x: 28.5, y: -76}
+        - {x: 28.5, y: -30}
+        - {x: 4.5, y: 29}
     - name: Items_6
       rect:
         serializedVersion: 2
@@ -220,7 +218,7 @@ TextureImporter:
         width: 63
         height: 152
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -16.5, y: 76}
@@ -237,7 +235,7 @@ TextureImporter:
         width: 252
         height: 208
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -107, y: 104}
@@ -262,7 +260,7 @@ TextureImporter:
         width: 296
         height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -83, y: 34}
@@ -272,38 +270,24 @@ TextureImporter:
         - {x: 148, y: -20}
         - {x: 148, y: 29}
         - {x: 144, y: 34}
-    - name: Items_9
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 152
-        width: 9
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
     - name: Items_10
       rect:
         serializedVersion: 2
         x: 117
         y: 100
         width: 57
-        height: 50
+        height: 152
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 7.5, y: 25}
-        - {x: -22.5, y: 25}
-        - {x: -28.5, y: 1}
-        - {x: -28.5, y: -21}
-        - {x: -22.5, y: -22}
-        - {x: -12.5, y: -25}
-        - {x: 17.5, y: -25}
-        - {x: 28.5, y: -21}
-        - {x: 28.5, y: -2}
-        - {x: 16.5, y: 21}
+      - - {x: -28.5, y: -72}
+        - {x: -15.5, y: -76}
+        - {x: 28.5, y: -76}
+        - {x: 28.5, y: -41}
+        - {x: 11.5, y: 13}
+        - {x: -11.5, y: 13}
+        - {x: -28.5, y: -32}
     outline: []
   spritePackingTag: 
   userData: 
