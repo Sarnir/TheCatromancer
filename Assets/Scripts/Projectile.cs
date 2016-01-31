@@ -13,9 +13,13 @@ public class Projectile : MonoBehaviour
     public Vector2 direction { get; set; }
     public GameObject player { get; set; }
 
+    public AudioClip MissleLunch;
+    //public AudioClip MissleDestroyed;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        AudioSource.PlayClipAtPoint(MissleLunch,transform.position);
     }
 
     void Update()
@@ -36,6 +40,7 @@ public class Projectile : MonoBehaviour
 
     void Destroy()
     {
+        //AudioSource.PlayClipAtPoint(MissleDestroyed, transform.position);
         Destroy(gameObject);
     }
 }

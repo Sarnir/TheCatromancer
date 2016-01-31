@@ -50,7 +50,12 @@ public class SpawnerController : MonoBehaviour
     GameObject SpawnMonster(Vector2 spawnerPosition)
     {
         Vector3 pos = transform.position + SpawnPositionShift;
-        GameObject monster = Instantiate(Monster, transform.position, Quaternion.identity) as GameObject;
+        try {
+            GameObject monster = Instantiate(Monster, transform.position, Quaternion.identity) as GameObject;
+        }
+        catch {
+
+        }
         //monster.transform.position = transform.position + new Vector3(SpawnPositionShift.x, SpawnPositionShift.y);
         return null;
     }
