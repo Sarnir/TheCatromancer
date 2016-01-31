@@ -28,7 +28,10 @@ public class Seal : MonoBehaviour
     Candle[] candles;
 
     float sealCompletion;
+    private float CompletedSoundLength = 0.3f;
+    private float ActualCompletedSoundLength = 0f;
     private AudioSource audioSource;
+    private bool isDrawing = false;
 
     void Start()
     {
@@ -113,12 +116,30 @@ public class Seal : MonoBehaviour
     }
 
     void StartDrawingSound() {
+        isDrawing = true;
         audioSource.mute = false;
-        Invoke("StopDrawingSound", 0.4f);
+        ActualCompletedSoundLength = 0;
+
+        Invoke("UnsetDrawingSound", CompletedSoundLength);
+    }
+
+    void UnsetIsDrawing() {
+        isDrawing = false;
     }
 
     void StopDrawingSound() {
         audioSource.mute = true;
+        
+    }
+
+    void Update() {
+        if (isDrawing) {
+            ActualCompletedSoundLength += Time.deltaTime;
+        }
+
+        if(ActualCompletedSoundLength > CompletedSoundLength) {
+            StopDrawingSound();
+        }
     }
 
 
