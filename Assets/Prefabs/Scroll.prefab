@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21259366}
   - 114: {fileID: 11442816}
   - 114: {fileID: 11485450}
+  - 114: {fileID: 11409420}
   m_Layer: 0
   m_Name: Scroll
   m_TagString: Untagged
@@ -74,6 +75,24 @@ BoxCollider2D:
   m_Offset: {x: -1.4578438, y: -0.054109097}
   serializedVersion: 2
   m_Size: {x: 1.72, y: 2.19}
+--- !u!114 &11409420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e9a97aac0ff984c8ed31d09df6fe98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Monster: {fileID: 199424, guid: 1bd6e2487aaa597488d5047a78ec9003, type: 2}
+  TimeToActivate: 0
+  Active: 0
+  PlayerTriggeredClosing: 0
+  SpawnIntervalBase: 4
+  SpawnPositionShift: {x: 0, y: -1, z: 0}
+  EpicStart: 0
 --- !u!114 &11442816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInBounds: 0
+  SoundWindowsOpen: {fileID: 0}
+  SoundWindowsClose: {fileID: 0}
   WindowOpen: {fileID: 21300002, guid: 113f4422d8aee1d4fb26d00b227c4a5c, type: 3}
   WindowClose: {fileID: 21300000, guid: 113f4422d8aee1d4fb26d00b227c4a5c, type: 3}
   AutoOpenTime: 5
@@ -121,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Monster: {fileID: 199424, guid: 1bd6e2487aaa597488d5047a78ec9003, type: 2}
   TimeToActivate: 0
-  Active: 1
+  Active: 0
   PlayerTriggeredClosing: 0
   SpawnIntervalBase: 4
   SpawnPositionShift: {x: 0, y: -1, z: 0}

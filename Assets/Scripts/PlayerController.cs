@@ -37,10 +37,15 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Vector3 originalScale;
 
+    private AudioSource audioSource;
+    public AudioClip soundCatHit;
+
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         polygonCollider = GetComponent<PolygonCollider2D>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         originalScale = transform.localScale;
 
@@ -134,8 +139,10 @@ public class PlayerController : MonoBehaviour
 
     void HandleHit()
     {
+
         if (!isImmortal)
         {
+            audioSource.PlayOneShot(soundCatHit);
             SetImmortal();
             StartBlinkSprite();
             LifesCount--;
